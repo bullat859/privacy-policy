@@ -41,7 +41,6 @@
         header {
             text-align: center;
             margin-bottom: 50px;
-            animation: fadeInDown 0.8s ease-out;
         }
 
         h1 {
@@ -67,13 +66,6 @@
             padding: 40px;
             margin-bottom: 30px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-            animation: fadeInUp 0.8s ease-out backwards;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .policy-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
         }
 
         h2 {
@@ -100,45 +92,35 @@
             font-size: 1.05rem;
         }
 
-        ul {
-            padding-left: 20px;
-            list-style-type: none;
+        .permission-item {
+            background: rgba(59, 130, 246, 0.05);
+            border: 1px solid var(--glass-border);
+            padding: 20px;
+            border-radius: 16px;
+            margin-bottom: 20px;
         }
 
-        ul li {
-            position: relative;
-            padding-left: 25px;
+        .permission-item h3 {
+            color: #93c5fd;
             margin-bottom: 10px;
+            font-size: 1.2rem;
         }
-
-        ul li::before {
-            content: '✦';
-            position: absolute;
-            left: 0;
-            color: var(--accent-color);
-        }
-
-        .highlight-box {
-            background: rgba(59, 130, 246, 0.1);
-            border-left: 4px solid var(--accent-color);
+        
+        .important-note {
+            background: rgba(239, 68, 68, 0.1);
+            border-left: 4px solid #ef4444;
             padding: 15px 20px;
             border-radius: 0 12px 12px 0;
-            margin: 20px 0;
-        }
-
-        .highlight-box p {
-            margin-bottom: 0;
-            color: #e2e8f0;
+            margin-top: 15px;
+            font-size: 0.95rem;
         }
 
         a {
             color: #60a5fa;
             text-decoration: none;
-            transition: color 0.2s ease;
         }
 
         a:hover {
-            color: #93c5fd;
             text-decoration: underline;
         }
 
@@ -150,23 +132,6 @@
             color: #64748b;
         }
 
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        /* Staggered animations */
-        .card-1 { animation-delay: 0.1s; }
-        .card-2 { animation-delay: 0.2s; }
-        .card-3 { animation-delay: 0.3s; }
-        .card-4 { animation-delay: 0.4s; }
-        .card-5 { animation-delay: 0.5s; }
-        
         @media (max-width: 768px) {
             .container { padding: 20px; }
             .policy-card { padding: 25px; }
@@ -182,46 +147,71 @@
             <p class="last-updated">Last Updated: July 20, 2026</p>
         </header>
 
-        <div class="policy-card card-1">
+        <div class="policy-card">
             <h2>Introduction</h2>
-            <p>Welcome to <strong>Dynamic Edge Gesture Control</strong>. We respect your privacy and are committed to protecting it. This Privacy Policy outlines our practices regarding data collection, usage, and permissions required by the application.</p>
+            <p>Welcome to <strong>Dynamic Edge Gesture Control</strong>. This Privacy Policy details exactly how our application works, what permissions it requests, and how those permissions are strictly used to deliver powerful device automation and gesture controls without compromising your privacy.</p>
         </div>
 
-        <div class="policy-card card-2">
-            <h2>Permissions and Data Usage</h2>
-            <p>To provide its core functionality, Dynamic Edge Gesture Control requires specific permissions. We believe in complete transparency about why these are needed:</p>
+        <div class="policy-card">
+            <h2>How It Works & Permissions Required</h2>
+            <p>Our app provides deep system integration to give you unparalleled control over your device. To achieve this, we rely on the following Android permissions, strictly utilized for local functionality:</p>
             
-            <div class="highlight-box">
-                <p><strong>Accessibility Service API:</strong> This app utilizes the Accessibility Service API to detect touch gestures on the screen edges and execute system-level actions (e.g., navigating Back, going Home, opening Recent Apps, taking Screenshots). <br><br><strong>Important:</strong> We do NOT use the Accessibility Service to collect, store, or transmit your personal data or screen content. The service is strictly used for detecting predefined gesture triggers and executing your configured navigation actions locally on your device.</p>
+            <div class="permission-item">
+                <h3>1. Accessibility Service API</h3>
+                <p>This is the core engine of the app. We use the Accessibility Service to:
+                <ul>
+                    <li>Draw the gesture overlays (edge sliders, notches, and pie menus) directly on your screen using the accessibility overlay capability (bypassing the need for standard "Display over other apps").</li>
+                    <li>Detect your touch interactions on these drawn edge zones.</li>
+                    <li>Execute system-level commands requested by your gestures, such as navigating Back, going Home, opening Recent Apps, or triggering Quick Settings.</li>
+                </ul>
+                <div class="important-note">
+                    <strong>Privacy Guarantee:</strong> We do NOT use the Accessibility Service to monitor your interactions with other apps, read your screen content, or capture any personal data. It is entirely restricted to detecting touches on our specific edge sliders and performing your configured actions.
+                </div>
+                </p>
             </div>
 
-            <div class="highlight-box">
-                <p><strong>Display Over Other Apps (Overlay):</strong> This permission allows the app to render the dynamic edge sliders, notch controls, and Pie menus on top of other applications, ensuring they are always accessible when you need them.</p>
+            <div class="permission-item">
+                <h3>2. Location (Background, Fine & Coarse)</h3>
+                <p>Used to enable <strong>Situational Notch Triggers</strong>. If you configure a gesture to activate based on your physical location (via the Google Maps picker), the app needs to monitor your location in the background to seamlessly trigger the action when you arrive at or leave the configured area.</p>
             </div>
 
-            <div class="highlight-box">
-                <p><strong>Location Permission (Optional):</strong> If you use the situational notch triggers linked to Google Maps, the app may request location access to allow you to pick a specific location on the map. We do not track your background location or share your location data.</p>
+            <div class="permission-item">
+                <h3>3. Storage (Manage External & Read/Write)</h3>
+                <p>Provides the app access to your files to support features like the <strong>Offline Music Service</strong> (playing local audio files via gestures) and managing media or backups associated with your custom configurations.</p>
+            </div>
+
+            <div class="permission-item">
+                <h3>4. Usage Access (Package Usage Stats)</h3>
+                <p>Allows the app to detect which application is currently actively running on your screen. This is necessary for "App-Specific Gesture Profiles," enabling the edge controls to dynamically change behavior depending on what app you are using.</p>
+            </div>
+            
+            <div class="permission-item">
+                <h3>5. Modify System Settings (Write Settings)</h3>
+                <p>Empowers your gestures to directly toggle system parameters like Screen Brightness, Screen Rotation, and Volume without needing to open the Android settings menu.</p>
+            </div>
+
+            <div class="permission-item">
+                <h3>6. Camera, Microphone & Bluetooth</h3>
+                <p>These permissions are only utilized when you map a gesture to specific hardware actions, such as turning on the Flashlight, launching a quick Voice Recording, or toggling Bluetooth connections.</p>
+            </div>
+
+            <div class="permission-item">
+                <h3>7. Contacts & Phone</h3>
+                <p>Used strictly for "Quick Dial" or "Direct Contact" gesture actions, allowing you to launch a call or open a specific contact directly from an edge swipe or pie menu.</p>
             </div>
         </div>
 
-        <div class="policy-card card-3">
-            <h2>Data Collection and Third-Party Services</h2>
-            <p>Dynamic Edge Gesture Control is designed to process data locally. However, we integrate with secure third-party services to support the app:</p>
+        <div class="policy-card">
+            <h2>Third-Party Services & Data Collection</h2>
+            <p>All gesture processing, configuration, and data handling occur locally on your device. We do not maintain servers to collect or sell your personal data.</p>
             <ul>
-                <li><strong>Google AdMob:</strong> We use Google AdMob to display rewarded video ads. AdMob may collect and process certain information, such as device identifiers and IP addresses, to provide personalized advertising. For more details, please review <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>.</li>
-                <li><strong>Crash Reporting:</strong> We may collect anonymous crash logs to help us identify and fix bugs, improving app stability. This data contains no personally identifiable information.</li>
+                <li><strong>Google AdMob:</strong> We utilize Google AdMob to display Rewarded Video Ads, allowing you to unlock premium features. AdMob may collect device identifiers (like Advertising ID) and IP addresses to serve personalized ads. Please review <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a> for details.</li>
             </ul>
         </div>
 
-        <div class="policy-card card-4">
-            <h2>Data Security</h2>
-            <p>We prioritize the security of your data. Since most processing occurs locally on your device, the risk of data breaches is minimized. Any data handled by third-party services like AdMob is governed by their strict security protocols.</p>
-        </div>
-
-        <div class="policy-card card-5">
+        <div class="policy-card">
             <h2>Changes to This Policy</h2>
-            <p>We may update our Privacy Policy from time to time to reflect changes in our practices or legal requirements. We encourage you to review this page periodically for any updates.</p>
-            <p>If you have any questions or concerns about our Privacy Policy or data practices, please contact us at our provided support channel.</p>
+            <p>We may update our Privacy Policy to reflect app updates or legal requirements. Please review this page periodically.</p>
         </div>
 
         <footer>
