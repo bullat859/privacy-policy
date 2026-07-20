@@ -13,6 +13,7 @@
             --accent-color: #3b82f6;
             --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
             --glass-border: rgba(255, 255, 255, 0.1);
+            --transition-speed: 0.3s;
         }
 
         * {
@@ -25,7 +26,7 @@
             font-family: 'Inter', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
-            line-height: 1.6;
+            line-height: 1.7;
             background-image: radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.15), transparent 25%),
                               radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.15), transparent 25%);
             background-attachment: fixed;
@@ -44,7 +45,7 @@
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: 3.2rem;
             font-weight: 700;
             background: var(--accent-gradient);
             -webkit-background-clip: text;
@@ -53,8 +54,11 @@
         }
 
         .last-updated {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: #94a3b8;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
 
         .policy-card {
@@ -66,15 +70,21 @@
             padding: 40px;
             margin-bottom: 30px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+        }
+        
+        .policy-card:hover {
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.15);
         }
 
         h2 {
             font-size: 1.8rem;
             color: #e2e8f0;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
         h2::before {
@@ -95,48 +105,105 @@
         .permission-item {
             background: rgba(59, 130, 246, 0.05);
             border: 1px solid var(--glass-border);
-            padding: 20px;
+            padding: 25px;
             border-radius: 16px;
             margin-bottom: 20px;
+            transition: transform var(--transition-speed) ease, border-color var(--transition-speed) ease, background var(--transition-speed) ease;
+        }
+
+        .permission-item:hover {
+            transform: translateX(8px);
+            border-color: rgba(59, 130, 246, 0.4);
+            background: rgba(59, 130, 246, 0.08);
         }
 
         .permission-item h3 {
             color: #93c5fd;
-            margin-bottom: 10px;
-            font-size: 1.2rem;
+            margin-bottom: 12px;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
         
         .important-note {
             background: rgba(239, 68, 68, 0.1);
             border-left: 4px solid #ef4444;
-            padding: 15px 20px;
+            padding: 18px 20px;
             border-radius: 0 12px 12px 0;
-            margin-top: 15px;
+            margin-top: 18px;
             font-size: 0.95rem;
+            color: #fca5a5;
+        }
+
+        .important-note strong {
+            color: #f87171;
+            display: block;
+            margin-bottom: 5px;
         }
 
         a {
             color: #60a5fa;
             text-decoration: none;
+            border-bottom: 1px dotted rgba(96, 165, 250, 0.5);
+            transition: color var(--transition-speed) ease, border-bottom-color var(--transition-speed) ease;
         }
 
         a:hover {
-            text-decoration: underline;
+            color: #93c5fd;
+            border-bottom-color: #93c5fd;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 12px 28px;
+            background: var(--accent-gradient);
+            color: #fff;
+            font-weight: 600;
+            border-radius: 30px;
+            border-bottom: none;
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        .contact-btn:hover {
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 25px rgba(59, 130, 246, 0.4);
+        }
+
+        ul {
+            padding-left: 20px;
+            list-style-type: none;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+
+        ul li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
         }
 
         footer {
             text-align: center;
-            margin-top: 60px;
-            padding-top: 30px;
+            margin-top: 70px;
+            padding-top: 35px;
             border-top: 1px solid var(--glass-border);
             color: #64748b;
         }
 
         @media (max-width: 768px) {
             .container { padding: 20px; }
-            .policy-card { padding: 25px; }
-            h1 { font-size: 2.2rem; }
+            .policy-card { padding: 30px 20px; }
+            h1 { font-size: 2.4rem; }
             h2 { font-size: 1.5rem; }
+            .permission-item:hover { transform: none; }
         }
     </style>
 </head>
@@ -149,7 +216,7 @@
 
         <div class="policy-card">
             <h2>Introduction</h2>
-            <p>Welcome to <strong>Dynamic Edge Gesture Control</strong>. This Privacy Policy details exactly how our application works, what permissions it requests, and how those permissions are strictly used to deliver powerful device automation and gesture controls without compromising your privacy.</p>
+            <p>Welcome to <strong>Dynamic Edge Gesture Control</strong>. We believe in complete transparency. This Privacy Policy details exactly how our application works, what permissions it requests, and how those permissions are strictly used to deliver powerful device automation without compromising your personal privacy.</p>
         </div>
 
         <div class="policy-card">
@@ -157,61 +224,73 @@
             <p>Our app provides deep system integration to give you unparalleled control over your device. To achieve this, we rely on the following Android permissions, strictly utilized for local functionality:</p>
             
             <div class="permission-item">
-                <h3>1. Accessibility Service API</h3>
+                <h3>🛠️ Accessibility Service API</h3>
                 <p>This is the core engine of the app. We use the Accessibility Service to:
                 <ul>
-                    <li>Draw the gesture overlays (edge sliders, notches, and pie menus) directly on your screen using the accessibility overlay capability (bypassing the need for standard "Display over other apps").</li>
-                    <li>Detect your touch interactions on these drawn edge zones.</li>
+                    <li>Draw the gesture overlays (edge sliders, notches, and pie menus) directly on your screen using the accessibility overlay capability.</li>
+                    <li>Detect your touch interactions exclusively on these drawn edge zones.</li>
                     <li>Execute system-level commands requested by your gestures, such as navigating Back, going Home, opening Recent Apps, or triggering Quick Settings.</li>
                 </ul>
                 <div class="important-note">
-                    <strong>Privacy Guarantee:</strong> We do NOT use the Accessibility Service to monitor your interactions with other apps, read your screen content, or capture any personal data. It is entirely restricted to detecting touches on our specific edge sliders and performing your configured actions.
+                    <strong>Privacy Guarantee</strong> We do NOT use the Accessibility Service to monitor your interactions with other apps, read your screen content, or capture any personal data. It is restricted entirely to our specific edge UI and system navigation.
                 </div>
                 </p>
             </div>
 
             <div class="permission-item">
-                <h3>2. Location (Background, Fine & Coarse)</h3>
-                <p>Used to enable <strong>Situational Notch Triggers</strong>. If you configure a gesture to activate based on your physical location (via the Google Maps picker), the app needs to monitor your location in the background to seamlessly trigger the action when you arrive at or leave the configured area.</p>
-            </div>
-
-            <div class="permission-item">
-                <h3>3. Storage (Manage External & Read/Write)</h3>
-                <p>Provides the app access to your files to support features like the <strong>Offline Music Service</strong> (playing local audio files via gestures) and managing media or backups associated with your custom configurations.</p>
-            </div>
-
-            <div class="permission-item">
-                <h3>4. Usage Access (Package Usage Stats)</h3>
-                <p>Allows the app to detect which application is currently actively running on your screen. This is necessary for "App-Specific Gesture Profiles," enabling the edge controls to dynamically change behavior depending on what app you are using.</p>
+                <h3>📍 Location (Background, Fine & Coarse)</h3>
+                <p>Used strictly to enable <strong>Situational Notch Triggers</strong>. If you configure a gesture to activate based on your physical location (via the Google Maps picker), the app monitors your location in the background to seamlessly trigger the action when you arrive at or leave the configured area.</p>
             </div>
             
             <div class="permission-item">
-                <h3>5. Modify System Settings (Write Settings)</h3>
-                <p>Empowers your gestures to directly toggle system parameters like Screen Brightness, Screen Rotation, and Volume without needing to open the Android settings menu.</p>
+                <h3>📊 Usage Access (Package Usage Stats)</h3>
+                <p>Allows the app to detect which application is currently actively running on your screen. This is necessary for "App-Specific Gesture Profiles," enabling the edge controls to dynamically adapt their behavior depending on what app you are currently using.</p>
             </div>
 
             <div class="permission-item">
-                <h3>6. Camera, Microphone & Bluetooth</h3>
+                <h3>⚙️ Modify System Settings (Write Settings)</h3>
+                <p>Empowers your gestures to directly toggle system parameters like Screen Brightness, Screen Rotation, Wi-Fi, and Volume without needing to open the Android settings menu.</p>
+            </div>
+
+            <div class="permission-item">
+                <h3>💾 Storage (Manage External & Read/Write)</h3>
+                <p>Provides the app access to your files to support local features like the <strong>Offline Music Service</strong> (playing local audio files via gestures) and managing media or backups associated with your custom configurations.</p>
+            </div>
+
+            <div class="permission-item">
+                <h3>🎙️ Camera, Microphone & Bluetooth</h3>
                 <p>These permissions are only utilized when you map a gesture to specific hardware actions, such as turning on the Flashlight, launching a quick Voice Recording, or toggling Bluetooth connections.</p>
             </div>
 
             <div class="permission-item">
-                <h3>7. Contacts & Phone</h3>
+                <h3>📞 Contacts & Phone</h3>
                 <p>Used strictly for "Quick Dial" or "Direct Contact" gesture actions, allowing you to launch a call or open a specific contact directly from an edge swipe or pie menu.</p>
             </div>
         </div>
 
         <div class="policy-card">
             <h2>Third-Party Services & Data Collection</h2>
-            <p>All gesture processing, configuration, and data handling occur locally on your device. We do not maintain servers to collect or sell your personal data.</p>
+            <p>All gesture processing, configuration, and data handling occur locally on your device. We do not maintain external servers to collect or sell your personal data.</p>
             <ul>
                 <li><strong>Google AdMob:</strong> We utilize Google AdMob to display Rewarded Video Ads, allowing you to unlock premium features. AdMob may collect device identifiers (like Advertising ID) and IP addresses to serve personalized ads. Please review <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a> for details.</li>
             </ul>
         </div>
+        
+        <div class="policy-card">
+            <h2>Data Retention and Deletion</h2>
+            <p>Because Dynamic Edge Gesture Control processes your preferences locally, all configurations, profiles, and offline data are stored directly on your device. If you wish to delete your data, you simply need to clear the app's cache/data via your Android settings or <strong>uninstall the application</strong>. Since we do not transmit this data to any external servers, uninstalling the app permanently removes all associated data.</p>
+        </div>
+        
+        <div class="policy-card">
+            <h2>Children's Privacy</h2>
+            <p>Our application is not directed at children under the age of 13. We do not knowingly collect personal information from children. If you are a parent or guardian and believe that your child has provided us with personal information, please contact us so we can take necessary actions.</p>
+        </div>
 
         <div class="policy-card">
-            <h2>Changes to This Policy</h2>
-            <p>We may update our Privacy Policy to reflect app updates or legal requirements. Please review this page periodically.</p>
+            <h2>Contact Us</h2>
+            <p>If you have any questions, suggestions, or concerns regarding this Privacy Policy or the app's data practices, we are always here to help.</p>
+            <br>
+            <a href="mailto:support@dynamicedge.com" class="contact-btn">Email Support</a>
         </div>
 
         <footer>
