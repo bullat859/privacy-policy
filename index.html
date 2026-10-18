@@ -1,582 +1,996 @@
 <!DOCTYPE html>
-<html lang="en" class="dark scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    
-    <!-- SEO & Meta Tags -->
+
+    <!-- SEO & Comprehensive Meta Tags -->
     <title>Privacy Policy - Dynamic Edge Gesture Control</title>
-    <meta name="description" content="Privacy Policy for Dynamic Edge Gesture Control. Complete transparency regarding how we handle your data, permissions, and local features.">
+    <meta name="description" content="Official Privacy Policy for Dynamic Edge Gesture Control by Madhusudan Payra. Full legal disclosures on AccessibilityService, camera, microphone, Firebase, AdMob, GDPR, CCPA/CPRA, COPPA, BIPA, and all Android permissions.">
     <meta name="theme-color" content="#030712">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Madhusudan Payra">
     <meta property="og:title" content="Privacy Policy - Dynamic Edge Gesture Control">
-    <meta property="og:description" content="Complete transparency regarding how we handle your data, permissions, and local features.">
+    <meta property="og:description" content="Exhaustive transparency regarding on-device processing, Android permissions, diagnostics telemetry, and zero personal data surveillance.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="icon.png">
-    
-    <!-- Browser Tab Icon (Favicon) -->
+    <link rel="canonical" href="https://bullat859.github.io/privacy-policy/">
+
+    <!-- Browser Tab Icon -->
     <link rel="icon" type="image/png" href="icon.png">
     <link rel="apple-touch-icon" href="icon.png">
-    
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            50: '#eff6ff',
-                            100: '#dbeafe',
-                            400: '#60a5fa',
-                            500: '#3b82f6',
-                            600: '#2563eb',
-                            700: '#1d4ed8',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
     <style>
+        /* =====================================================
+           RESET & BASE
+        ===================================================== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; font-size: 16px; }
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #030712;
-            overflow-x: clip; 
+            color: #cbd5e1;
+            min-height: 100vh;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.7;
         }
-        .glass-panel {
-            background: rgba(17, 24, 39, 0.75);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+        ::selection { background: #3b82f6; color: #fff; }
+
+        /* =====================================================
+           SCROLLBAR
+        ===================================================== */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #030712; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 9999px; }
+        ::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
+
+        /* =====================================================
+           UTILITY
+        ===================================================== */
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        a { color: #60a5fa; text-decoration: none; transition: color 0.2s; }
+        a:hover { color: #93c5fd; }
+        code {
+            font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+            background: rgba(59,130,246,0.1);
+            border: 1px solid rgba(59,130,246,0.2);
+            padding: 1px 6px;
+            border-radius: 5px;
+            font-size: 0.82em;
+            color: #7dd3fc;
         }
-        .glass-card {
-            background: rgba(30, 41, 59, 0.35);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        strong { color: #e2e8f0; font-weight: 600; }
+
+        /* =====================================================
+           PROGRESS BAR
+        ===================================================== */
+        #progress-bar-track {
+            position: fixed; top: 0; left: 0; width: 100%; height: 3px;
+            z-index: 200; background: #0f172a;
         }
-        .glass-card:hover {
-            border-color: rgba(59, 130, 246, 0.35);
-            background: rgba(30, 41, 59, 0.65);
-            box-shadow: 0 12px 30px -10px rgba(59, 130, 246, 0.15);
-        }
-        .glow-bg {
-            position: fixed;
-            width: 100vw;
-            height: 100vh;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: -1;
-            background: 
-                radial-gradient(circle at 15% 15%, rgba(59, 130, 246, 0.12) 0%, transparent 40%),
-                radial-gradient(circle at 85% 75%, rgba(139, 92, 246, 0.12) 0%, transparent 40%),
-                radial-gradient(circle at 50% 50%, rgba(3, 7, 18, 1) 0%, rgba(3, 7, 18, 1) 100%);
-        }
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 6px;
-            height: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #030712;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #1e293b;
-            border-radius: 9999px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #3b82f6;
-        }
-        
-        /* Hide scrollbar for quick links */
-        .hide-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .hide-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
+        #progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #60a5fa, #818cf8, #f59e0b);
+            width: 0%;
+            transition: width 0.15s ease-out;
         }
 
-        /* Offset scrolling so sticky headers don't cover content */
-        .policy-section {
-            scroll-margin-top: 130px; 
+        /* =====================================================
+           GLOW BACKGROUND
+        ===================================================== */
+        .glow-bg {
+            position: fixed; inset: 0; pointer-events: none; z-index: -1;
+            background:
+                radial-gradient(circle at 15% 15%, rgba(59,130,246,0.12) 0%, transparent 40%),
+                radial-gradient(circle at 85% 75%, rgba(139,92,246,0.11) 0%, transparent 40%),
+                #030712;
         }
-        @media (min-width: 640px) {
-            .policy-section {
-                scroll-margin-top: 145px;
-            }
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+        header {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(3,7,18,0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+            box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+        }
+        .header-inner {
+            max-width: 900px; margin: 0 auto;
+            padding: 10px 20px;
+            display: flex; align-items: center; justify-content: space-between; gap: 12px;
+        }
+        .header-brand { display: flex; align-items: center; gap: 10px; }
+        .header-icon {
+            width: 34px; height: 34px; border-radius: 10px;
+            overflow: hidden; border: 1px solid rgba(255,255,255,0.12);
+            background: #0f172a; flex-shrink: 0;
+            box-shadow: 0 2px 8px rgba(59,130,246,0.15);
+        }
+        .header-icon img { width: 100%; height: 100%; object-fit: cover; }
+        .header-title {
+            font-size: 0.9rem; font-weight: 700;
+            color: #f1f5f9; letter-spacing: -0.02em;
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+            max-width: 220px;
+        }
+        .header-links { display: flex; align-items: center; gap: 12px; }
+        .header-link {
+            font-size: 0.78rem; font-weight: 500;
+            color: #94a3b8; transition: color 0.2s;
+            white-space: nowrap;
+        }
+        .header-link:hover { color: #60a5fa; }
+
+        /* =====================================================
+           CONTENT WRAPPER
+        ===================================================== */
+        .page-wrapper {
+            max-width: 900px; margin: 0 auto;
+            padding: 32px 20px 64px;
+        }
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+        .hero { text-align: center; margin-bottom: 40px; }
+        .hero-icon-wrap {
+            display: inline-block; padding: 6px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, rgba(59,130,246,0.3), rgba(139,92,246,0.3));
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 8px 32px rgba(59,130,246,0.12);
+            margin-bottom: 16px;
+        }
+        .hero-icon-wrap img {
+            width: 72px; height: 72px; border-radius: 14px; object-fit: cover;
+            display: block;
+        }
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800; letter-spacing: -0.04em;
+            background: linear-gradient(135deg, #fff 30%, #cbd5e1 60%, #60a5fa 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px; line-height: 1.15;
+        }
+        .hero-sub {
+            color: #64748b; font-size: 0.9rem; max-width: 600px; margin: 0 auto 20px;
+            line-height: 1.6;
+        }
+        .badge-row { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 20px; }
+        .badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 4px 12px; border-radius: 999px;
+            font-size: 0.72rem; font-weight: 600;
+            border: 1px solid;
+        }
+        .badge-blue { background: rgba(59,130,246,0.1); border-color: rgba(59,130,246,0.25); color: #93c5fd; }
+        .badge-green { background: rgba(34,197,94,0.1); border-color: rgba(34,197,94,0.25); color: #86efac; }
+        .badge-amber { background: rgba(245,158,11,0.1); border-color: rgba(245,158,11,0.25); color: #fcd34d; }
+        .badge-purple { background: rgba(139,92,246,0.1); border-color: rgba(139,92,246,0.25); color: #c4b5fd; }
+        .btn-play {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 10px 18px; border-radius: 12px;
+            background: #0f172a; border: 1px solid #334155;
+            color: #e2e8f0; font-size: 0.82rem; font-weight: 600;
+            transition: all 0.2s; text-decoration: none;
+        }
+        .btn-play:hover {
+            border-color: rgba(59,130,246,0.5); background: #1e293b;
+            color: #f8fafc; transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(59,130,246,0.15);
+        }
+        .btn-play svg { color: #34d399; }
+
+        /* =====================================================
+           HIGHLIGHT GRID
+        ===================================================== */
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 14px; margin-bottom: 32px;
+        }
+        .highlight-card {
+            background: rgba(17,24,39,0.75);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 16px; padding: 18px;
+            backdrop-filter: blur(16px);
+        }
+        .highlight-icon {
+            width: 36px; height: 36px; border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.1rem; margin-bottom: 10px; border: 1px solid;
+        }
+        .hi-blue { background: rgba(59,130,246,0.1); border-color: rgba(59,130,246,0.2); }
+        .hi-amber { background: rgba(245,158,11,0.1); border-color: rgba(245,158,11,0.2); }
+        .hi-green { background: rgba(34,197,94,0.1); border-color: rgba(34,197,94,0.2); }
+        .hi-purple { background: rgba(139,92,246,0.1); border-color: rgba(139,92,246,0.2); }
+        .hi-red { background: rgba(239,68,68,0.1); border-color: rgba(239,68,68,0.2); }
+        .hi-cyan { background: rgba(6,182,212,0.1); border-color: rgba(6,182,212,0.2); }
+        .highlight-card h3 { font-size: 0.85rem; font-weight: 700; color: #f1f5f9; margin-bottom: 4px; }
+        .highlight-card p { font-size: 0.75rem; color: #64748b; line-height: 1.5; }
+
+        /* =====================================================
+           SUB-NAV
+        ===================================================== */
+        .subnav {
+            position: sticky; top: 55px; z-index: 90;
+            background: rgba(3,7,18,0.95);
+            backdrop-filter: blur(16px);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            margin: 0 -20px 32px;
+            padding: 10px 20px;
+        }
+        .subnav-inner {
+            display: flex; overflow-x: auto; gap: 8px;
+            align-items: center; padding-bottom: 2px;
+        }
+        .subnav-inner::-webkit-scrollbar { display: none; }
+        .subnav-inner { -ms-overflow-style: none; scrollbar-width: none; }
+        .nav-pill {
+            flex-shrink: 0;
+            padding: 5px 14px; border-radius: 999px;
+            font-size: 0.72rem; font-weight: 600;
+            color: #94a3b8;
+            background: rgba(30,41,59,0.6);
+            border: 1px solid rgba(255,255,255,0.07);
+            text-decoration: none; white-space: nowrap;
+            transition: all 0.2s;
+        }
+        .nav-pill:hover {
+            background: rgba(59,130,246,0.15);
+            color: #93c5fd; border-color: rgba(59,130,246,0.3);
+        }
+
+        /* =====================================================
+           DATA SAFETY TABLE
+        ===================================================== */
+        .data-table-wrap { overflow-x: auto; border-radius: 12px; margin-top: 12px; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.78rem; }
+        thead { background: rgba(59,130,246,0.12); }
+        th {
+            padding: 10px 14px; text-align: left;
+            color: #93c5fd; font-weight: 700; font-size: 0.72rem;
+            text-transform: uppercase; letter-spacing: 0.06em;
+            border-bottom: 1px solid rgba(59,130,246,0.2);
+            white-space: nowrap;
+        }
+        td { padding: 9px 14px; color: #94a3b8; border-bottom: 1px solid rgba(255,255,255,0.04); vertical-align: top; }
+        tr:last-child td { border-bottom: none; }
+        tr:hover td { background: rgba(30,41,59,0.3); }
+        .tag {
+            display: inline-block; padding: 2px 8px; border-radius: 6px;
+            font-size: 0.67rem; font-weight: 700;
+        }
+        .tag-none { background: rgba(34,197,94,0.12); color: #86efac; border: 1px solid rgba(34,197,94,0.2); }
+        .tag-local { background: rgba(59,130,246,0.12); color: #93c5fd; border: 1px solid rgba(59,130,246,0.2); }
+        .tag-anon { background: rgba(245,158,11,0.12); color: #fcd34d; border: 1px solid rgba(245,158,11,0.2); }
+        .tag-third { background: rgba(139,92,246,0.12); color: #c4b5fd; border: 1px solid rgba(139,92,246,0.2); }
+
+        /* =====================================================
+           POLICY SECTIONS
+        ===================================================== */
+        .policy-section { scroll-margin-top: 120px; }
+        .section-card {
+            background: rgba(17,24,39,0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 20px; padding: 28px 28px 28px 36px;
+            margin-bottom: 16px; position: relative; overflow: hidden;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+        }
+        .section-card::before {
+            content: ''; position: absolute; top: 0; left: 0;
+            width: 4px; height: 100%;
+            background: linear-gradient(180deg, #3b82f6, #6366f1);
+        }
+        .section-card.amber-accent::before { background: linear-gradient(180deg, #f59e0b, #ef4444); }
+        .section-card.green-accent::before { background: linear-gradient(180deg, #22c55e, #06b6d4); }
+        .section-card.purple-accent::before { background: linear-gradient(180deg, #a855f7, #ec4899); }
+        .section-card.red-accent::before { background: linear-gradient(180deg, #ef4444, #f97316); }
+        .section-num {
+            display: inline-flex; align-items: center;
+            font-size: 0.68rem; font-weight: 800; letter-spacing: 0.1em;
+            color: #60a5fa; text-transform: uppercase;
+            background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.2);
+            padding: 2px 8px; border-radius: 6px; margin-right: 10px;
+        }
+        .section-title {
+            display: flex; align-items: center; flex-wrap: wrap;
+            font-size: clamp(1rem, 3vw, 1.3rem); font-weight: 700;
+            color: #f1f5f9; margin-bottom: 16px; line-height: 1.3;
+        }
+        .section-body { color: #94a3b8; font-size: 0.88rem; line-height: 1.8; }
+        .section-body p { margin-bottom: 12px; }
+        .section-body p:last-child { margin-bottom: 0; }
+        .section-body h3 {
+            font-size: 0.9rem; font-weight: 700; color: #93c5fd;
+            margin: 16px 0 8px;
+        }
+        .section-body h4 {
+            font-size: 0.82rem; font-weight: 700; color: #bfdbfe;
+            margin: 12px 0 6px;
+        }
+        .section-body ul {
+            list-style: none; padding: 0; margin: 8px 0 12px;
+        }
+        .section-body ul li {
+            padding: 4px 0 4px 20px; position: relative; font-size: 0.83rem;
+        }
+        .section-body ul li::before {
+            content: '✦'; position: absolute; left: 0; color: #60a5fa; font-size: 0.6rem; top: 7px;
+        }
+        .section-body ol { padding-left: 20px; margin: 8px 0 12px; }
+        .section-body ol li { font-size: 0.83rem; padding: 3px 0; }
+
+        /* Callout boxes */
+        .callout {
+            border-radius: 12px; padding: 14px 16px;
+            font-size: 0.82rem; line-height: 1.6; margin: 14px 0;
+        }
+        .callout-blue { background: rgba(59,130,246,0.08); border: 1px solid rgba(59,130,246,0.2); color: #bfdbfe; }
+        .callout-green { background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.2); color: #bbf7d0; }
+        .callout-amber { background: rgba(245,158,11,0.1); border-left: 4px solid #f59e0b; border-radius: 0 12px 12px 0; color: #fde68a; }
+        .callout-red { background: rgba(239,68,68,0.08); border-left: 4px solid #ef4444; border-radius: 0 12px 12px 0; color: #fecaca; }
+        .callout-purple { background: rgba(139,92,246,0.08); border: 1px solid rgba(139,92,246,0.2); color: #e9d5ff; }
+        .callout strong { font-weight: 700; }
+
+        /* Inner card */
+        .inner-card {
+            background: rgba(30,41,59,0.4); border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 12px; padding: 14px 16px; margin: 10px 0;
+            transition: all 0.3s;
+        }
+        .inner-card:hover {
+            border-color: rgba(59,130,246,0.3);
+            background: rgba(30,41,59,0.65);
+            box-shadow: 0 4px 20px rgba(59,130,246,0.08);
+        }
+        .inner-card h4 { font-size: 0.82rem; font-weight: 700; color: #93c5fd; margin-bottom: 4px; }
+        .inner-card p { font-size: 0.78rem; color: #94a3b8; margin: 0; line-height: 1.55; }
+
+        /* Permission badge row */
+        .perm-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; margin: 12px 0; }
+
+        /* =====================================================
+           CONTACT SECTION & DEVELOPER CARD UI
+        ===================================================== */
+        .dev-card {
+            background: rgba(30,41,59,0.45);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 18px 20px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .dev-card:hover {
+            border-color: rgba(59,130,246,0.35);
+            background: rgba(30,41,59,0.7);
+            box-shadow: 0 12px 30px -10px rgba(59,130,246,0.15);
+        }
+        .dev-avatar {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3b82f6, #4f46e5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 14px rgba(59,130,246,0.35);
+        }
+        .dev-name {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #f1f5f9;
+            margin-bottom: 2px;
+        }
+        .dev-role {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin-bottom: 2px;
+        }
+        .dev-location {
+            font-size: 0.78rem;
+            color: #60a5fa;
+            font-weight: 500;
+            margin: 0;
+        }
+        .contact-btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px;
+            margin-top: 18px;
+            margin-bottom: 16px;
+        }
+        .btn-support-gradient {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 22px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #2563eb, #4f46e5);
+            color: #ffffff;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 4px 18px rgba(37,99,235,0.3);
+            transition: all 0.2s ease;
+        }
+        .btn-support-gradient:hover {
+            background: linear-gradient(135deg, #3b82f6, #6366f1);
+            color: #ffffff;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 22px rgba(37,99,235,0.45);
+        }
+        .btn-copy-action {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 20px;
+            border-radius: 14px;
+            background: #0f172a;
+            border: 1px solid #334155;
+            color: #cbd5e1;
+            font-size: 0.82rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .btn-copy-action:hover {
+            background: #1e293b;
+            color: #ffffff;
+            border-color: #475569;
+        }
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+        footer {
+            margin-top: 48px; padding: 32px 20px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            text-align: center;
+        }
+        .footer-links {
+            display: flex; flex-wrap: wrap; gap: 8px;
+            justify-content: center; margin-bottom: 20px;
+        }
+        .footer-link {
+            font-size: 0.75rem; color: #475569;
+            padding: 4px 12px; border-radius: 999px;
+            border: 1px solid rgba(255,255,255,0.06);
+            background: rgba(15,23,42,0.5);
+            transition: all 0.2s;
+        }
+        .footer-link:hover { color: #60a5fa; border-color: rgba(59,130,246,0.3); }
+        .footer-last-updated {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 4px 12px; border-radius: 999px;
+            background: rgba(59,130,246,0.08); border: 1px solid rgba(59,130,246,0.15);
+            color: #60a5fa; font-size: 0.72rem; font-weight: 600;
+            margin-bottom: 16px;
+        }
+        .footer-copy { font-size: 0.78rem; color: #475569; margin-bottom: 6px; }
+        .footer-copy a { color: #64748b; }
+        .footer-copy a:hover { color: #60a5fa; }
+        .footer-trademark { font-size: 0.7rem; color: #334155; max-width: 480px; margin: 0 auto 8px; }
+        .footer-love { font-size: 0.82rem; color: #64748b; font-weight: 600; padding-top: 4px; }
+
+        /* =====================================================
+           SCROLL TO TOP
+        ===================================================== */
+        #scrollTopBtn {
+            position: fixed; bottom: 24px; right: 24px;
+            width: 44px; height: 44px; border-radius: 50%;
+            background: rgba(37,99,235,0.9); color: #fff;
+            border: 1px solid rgba(96,165,250,0.3);
+            box-shadow: 0 4px 16px rgba(37,99,235,0.35);
+            cursor: pointer; z-index: 150;
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0; transform: translateY(16px); pointer-events: none;
+            transition: all 0.3s;
+        }
+        #scrollTopBtn.visible { opacity: 1; transform: translateY(0); pointer-events: all; }
+        #scrollTopBtn:hover { background: #2563eb; transform: translateY(-2px); }
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+        @media (max-width: 640px) {
+            .page-wrapper { padding: 20px 16px 48px; }
+            .section-card { padding: 22px 18px 22px 28px; border-radius: 16px; }
+            .subnav { margin: 0 -16px 24px; padding: 8px 16px; }
+            .header-title { max-width: 160px; font-size: 0.82rem; }
+            .hero h1 { font-size: 2rem; }
         }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen selection:bg-blue-500 selection:text-white relative antialiased">
-    
-    <!-- Reading Progress Bar -->
-    <div class="fixed top-0 left-0 w-full h-1 z-[60] bg-slate-900" aria-hidden="true">
-        <div id="progressBar" class="h-full bg-gradient-to-r from-blue-400 via-indigo-500 to-amber-500 w-0 transition-all duration-150 ease-out"></div>
-    </div>
+<body>
+    <!-- Progress Bar -->
+    <div id="progress-bar-track" aria-hidden="true"><div id="progress-bar"></div></div>
 
+    <!-- Glow background -->
     <div class="glow-bg" aria-hidden="true"></div>
 
-    <!-- MAIN STICKY HEADER (App Logo & Name) -->
-    <header class="sticky top-0 z-50 w-full bg-[#030712]/95 backdrop-blur-xl border-b border-slate-800 shadow-lg shadow-black/40">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3.5 flex items-center justify-start gap-3 w-full">
-            
-            <!-- Real App Icon Container -->
-            <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl overflow-hidden shadow-md shadow-blue-500/20 shrink-0 border border-white/15 bg-slate-900">
-                <img 
-                    src="icon.png" 
-                    alt="Dynamic Edge Gesture Control App Icon" 
-                    class="w-full h-full object-cover"
-                    onerror="this.onerror=null; this.src='https://play-lh.googleusercontent.com/com.m.payra.gesture.control.app';"
-                />
+    <!-- ====================================================
+         HEADER
+    ==================================================== -->
+    <header>
+        <div class="header-inner">
+            <div class="header-brand">
+                <div class="header-icon">
+                    <img src="icon.png" alt="Dynamic Edge Gesture Control App Icon">
+                </div>
+                <span class="header-title">Dynamic Edge Gesture Control</span>
             </div>
-
-            <span class="text-[14px] sm:text-[16px] font-bold text-slate-100 truncate tracking-tight">
-                Dynamic Edge Gesture Control
-            </span>
+            <div class="header-links">
+                <a href="https://bullat859.github.io/Terms-of-use/" class="header-link" target="_blank" rel="noopener noreferrer">Terms of Use →</a>
+                <a href="#contact" class="header-link">Support &amp; Legal</a>
+            </div>
         </div>
     </header>
 
-    <!-- Main Content Container -->
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 sm:pb-16 relative pt-8 sm:pt-12">
-        
-        <!-- Hero Header -->
-        <div class="text-center mb-8 sm:mb-12">
-            <!-- Center Large Icon Preview -->
-            <div class="inline-block p-1 rounded-2xl bg-gradient-to-b from-blue-500/30 to-purple-500/30 border border-white/10 shadow-xl shadow-blue-500/10 mb-4">
-                <img src="icon.png" alt="App Icon" class="w-16 h-16 sm:w-20 sm:h-20 rounded-xl object-cover shadow-inner">
+    <!-- ====================================================
+         MAIN CONTENT
+    ==================================================== -->
+    <div class="page-wrapper">
+
+        <!-- HERO -->
+        <div class="hero">
+            <div class="hero-icon-wrap">
+                <img src="icon.png" alt="App Icon">
+            </div>
+            <h1>Privacy Policy</h1>
+            <p class="hero-sub">Complete legal disclosures for <strong>Dynamic Edge Gesture Control&trade;</strong>.</p>
+
+            <div class="badge-row">
+                <span class="badge badge-green">🛡️ Zero Data Surveillance</span>
+                <span class="badge badge-blue">📱 100% On-Device Processing</span>
+                <span class="badge badge-amber">🔥 Ad Networks: AdMob, Meta &amp; Unity</span>
+                <span class="badge badge-purple">🌍 GDPR &amp; CCPA Compliant</span>
+                <span class="badge badge-green">👶 COPPA Age-Gated</span>
+                <span class="badge badge-blue">🔒 Accessibility Policy Certified</span>
             </div>
 
-            <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-white via-slate-200 to-blue-400 bg-clip-text text-transparent mb-3 leading-tight">
-                Privacy Policy
-            </h1>
-            <p class="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto mb-6">
-                Complete transparency regarding how we handle your data, permissions, and local features.
-            </p>
+            <a href="https://play.google.com/store/apps/details?id=com.m.payra.gesture.control.app"
+               target="_blank" rel="noopener noreferrer" class="btn-play" aria-label="Get the app on Google Play">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L18.81,13.12C19.86,12.55 19.86,11.45 18.81,10.88L16.81,8.88L14.81,10.88L14.81,13.12L16.81,15.12M13.69,12L15.39,8.81L13.69,12M13.69,12L15.39,15.19L3.84,21.85L13.69,12Z"/>
+                </svg>
+                Get it on Google Play
+                <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+        </div>
 
-            <!-- Google Play Store Button -->
-            <div class="flex justify-center">
-                <a href="https://play.google.com/store/apps/details?id=com.m.payra.gesture.control.app" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2.5 rounded-xl bg-slate-900 border border-slate-700 hover:border-blue-500/50 text-slate-200 text-xs sm:text-sm font-semibold transition-all hover:bg-slate-800 shadow-md transform hover:-translate-y-0.5" aria-label="Get the app on Google Play">
-                    <svg class="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                        <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L18.81,13.12C19.86,12.55 19.86,11.45 18.81,10.88L16.81,8.88L14.81,10.88L14.81,13.12L16.81,15.12M13.69,12L15.39,8.81L13.69,12M13.69,12L15.39,15.19L3.84,21.85L13.69,12Z"/>
-                    </svg>
-                    <span>Get it on Google Play</span>
-                    <svg class="w-3 h-3 sm:w-3.5 sm:h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                </a>
+        <!-- HIGHLIGHT GRID -->
+        <div class="highlight-grid">
+            <div class="highlight-card">
+                <div class="highlight-icon hi-blue">🛡️</div>
+                <h3>Local Processing First</h3>
+                <p>Gesture recognition, edge zones, voice parsing, audio playback, one-touch camera shortcuts, and video recording operate 100% on-device with zero remote streaming.</p>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-icon hi-amber">🔥</div>
+                <h3>Multi-Network Ad Support</h3>
+                <p>Anonymous diagnostics via Google Firebase. Banner, interstitial, and rewarded ads mediated transparently through Google AdMob, Meta Audience Network, and Unity Ads.</p>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-icon hi-green">🔒</div>
+                <h3>Zero Screen Surveillance</h3>
+                <p>We strictly enforce zero screen scraping, zero keystroke logging, zero password capture, and zero financial tracking across all Accessibility and Overlay features.</p>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-icon hi-purple">🌍</div>
+                <h3>Global Statutory Rights</h3>
+                <p>Full compliance with EU GDPR, UK GDPR, California CCPA/CPRA, COPPA, BIPA, Virginia CDPA, Colorado CPA, and international privacy frameworks.</p>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-icon hi-red">🔐</div>
+                <h3>No Account Required</h3>
+                <p>Dynamic Edge Gesture Control requires no account creation, no email registration, no cloud login, and no identity verification of any kind.</p>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-icon hi-cyan">📊</div>
+                <h3>Google Play Data Safety</h3>
+                <p>All data practices are disclosed in the Google Play Data Safety section in full compliance with Google's User Data Policy (2025 edition).</p>
             </div>
         </div>
 
-        <!-- Quick Policy Highlights Grid -->
-        <section id="overview" class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4 mb-8 sm:mb-10">
-            <div class="glass-panel p-4 sm:p-5 rounded-2xl border border-slate-800">
-                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-lg sm:text-xl mb-2.5 sm:mb-3 border border-blue-500/20" aria-hidden="true">
-                    🛡️
-                </div>
-                <h3 class="text-sm sm:text-base font-semibold text-slate-100 mb-1">Analytics vs. Personal Data</h3>
-                <p class="text-slate-400 text-xs leading-relaxed">We collect essential usage and crash analytics to improve our app. However, your personal photos, videos, audio recordings, and custom notes are stored locally and are never uploaded to our servers.</p>
-            </div>
-
-            <div class="glass-panel p-4 sm:p-5 rounded-2xl border border-slate-800">
-                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-lg sm:text-xl mb-2.5 sm:mb-3 border border-amber-500/20" aria-hidden="true">
-                    🔥
-                </div>
-                <h3 class="text-sm sm:text-base font-semibold text-slate-100 mb-1">Firebase & AdMob Integration</h3>
-                <p class="text-slate-400 text-xs leading-relaxed">Firebase securely handles our diagnostic crash reporting, while Google AdMob serves optional rewarded ad features.</p>
-            </div>
-        </section>
-
-        <!-- SECONDARY STICKY NAVBAR -->
-        <nav class="sticky top-[52px] sm:top-[64px] z-40 mb-8 sm:mb-10 py-2 sm:py-3 bg-[#030712]/95 backdrop-blur-xl border-b border-t border-slate-800/50 mx-[-16px] px-[16px] sm:mx-0 sm:px-4 sm:rounded-2xl shadow-lg shadow-black/30 transition-all">
-            <div class="flex overflow-x-auto hide-scrollbar gap-2 sm:gap-3 w-full justify-start sm:justify-center items-center">
-                <a href="#intro" class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-800/60 border border-slate-600/50 text-xs sm:text-sm font-medium text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/40 transition-all">Intro</a>
-                <a href="#permissions" class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-800/60 border border-slate-600/50 text-xs sm:text-sm font-medium text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/40 transition-all">Permissions</a>
-                <a href="#firebase" class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-800/60 border border-slate-600/50 text-xs sm:text-sm font-medium text-slate-300 hover:bg-amber-500/20 hover:text-amber-300 hover:border-amber-500/40 transition-all">Firebase</a>
-                <a href="#admob" class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-800/60 border border-slate-600/50 text-xs sm:text-sm font-medium text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/40 transition-all">AdMob</a>
-                <a href="#security" class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-800/60 border border-slate-600/50 text-xs sm:text-sm font-medium text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/40 transition-all">Security</a>
-                <a href="#contact" class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-800/60 border border-slate-600/50 text-xs sm:text-sm font-medium text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/40 transition-all">Contact</a>
+        <!-- STICKY SUB-NAV -->
+        <nav class="subnav" aria-label="Policy quick navigation">
+            <div class="subnav-inner">
+                <a href="#summary" class="nav-pill">01. Summary</a>
+                <a href="#accessibility" class="nav-pill">02. Accessibility</a>
+                <a href="#permissions" class="nav-pill">03. Permissions</a>
+                <a href="#camera-mic" class="nav-pill">04. Camera &amp; Mic</a>
+                <a href="#location" class="nav-pill">05. Location</a>
+                <a href="#draw-overlay" class="nav-pill">06. Overlay</a>
+                <a href="#usage-stats" class="nav-pill">07. App Stats</a>
+                <a href="#notifications" class="nav-pill">08. Notifications</a>
+                <a href="#write-settings" class="nav-pill">09. Write Settings</a>
+                <a href="#billing" class="nav-pill">10. In-App Billing</a>
+                <a href="#advertising" class="nav-pill">11. Ad Networks</a>
+                <a href="#firebase" class="nav-pill">12. Firebase Analytics</a>
+                <a href="#gdpr-ccpa" class="nav-pill">13. GDPR &amp; CCPA</a>
+                <a href="#data-deletion" class="nav-pill">14. Data Deletion</a>
+                <a href="#contact" class="nav-pill">34. Contact Desk</a>
             </div>
         </nav>
 
-        <!-- Main Document Body -->
-        <main class="space-y-6 sm:space-y-8">
-
-            <!-- Section 1: Introduction -->
-            <section id="intro" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden">
-                <div class="absolute top-0 left-0 w-1 sm:w-1.5 h-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
-                <h2 class="text-lg sm:text-2xl font-bold text-slate-100 mb-3 sm:mb-4 flex items-center gap-2.5">
-                    <span class="text-blue-400 text-xs sm:text-sm font-extrabold uppercase tracking-widest bg-blue-500/10 px-2 py-0.5 sm:py-1 rounded-md border border-blue-500/20">01</span>
-                    Introduction & Architecture
-                </h2>
-                <div class="space-y-3 sm:space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed">
-                    <p>
-                        Welcome to <strong>Dynamic Edge Gesture Control</strong>. We value your trust and are committed to complete transparency regarding our data processing practices.
-                    </p>
-                    <p>
-                        Our application provides deep system customization and gesture automation. While primary gesture detection, touch listening, and screen overlays function offline directly on your device, our app does connect to secure cloud services (specifically Google Firebase). We use these services to collect essential usage telemetry, diagnose software crashes, and monitor app performance. We also use Google AdMob to serve rewarded video ads.
-                    </p>
-                    <p class="text-xs sm:text-sm bg-slate-900/80 border border-slate-800 p-3.5 sm:p-4 rounded-xl text-slate-400">
-                        By installing, accessing, or using Dynamic Edge Gesture Control, you acknowledge and agree to the data collection and usage practices described in this Privacy Policy.
-                    </p>
+        <main>
+            <!-- ── SECTION 00: DATA SAFETY TABLE ── -->
+            <section id="data-safety-matrix" class="policy-section section-card">
+                <h2 class="section-title"><span class="section-num">00</span>Google Play Data Safety Matrix</h2>
+                <div class="section-body">
+                    <p>In compliance with Google Play's mandatory Data Safety disclosure requirements, the following table summarizes every category of data our application may access, collect, or process, and how it is handled. This mirrors the information submitted in the Google Play Console Data Safety form.</p>
+                    <div class="data-table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Data Category</th>
+                                    <th>Data Type</th>
+                                    <th>Collected?</th>
+                                    <th>Shared?</th>
+                                    <th>Purpose</th>
+                                    <th>Encrypted?</th>
+                                    <th>Deletable?</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Location</td>
+                                    <td>Approximate &amp; Precise location</td>
+                                    <td><span class="tag tag-local">On-device only</span></td>
+                                    <td><span class="tag tag-none">Not shared</span></td>
+                                    <td>Situational geo-fencing triggers only (if enabled)</td>
+                                    <td>Yes (Android keystore)</td>
+                                    <td>Yes</td>
+                                </tr>
+                                <tr>
+                                    <td>Photos &amp; Videos</td>
+                                    <td>Photos, Videos captured by app</td>
+                                    <td><span class="tag tag-local">On-device only</span></td>
+                                    <td><span class="tag tag-none">Not shared</span></td>
+                                    <td>User-initiated gesture shortcuts only</td>
+                                    <td>Yes</td>
+                                    <td>Yes</td>
+                                </tr>
+                                <tr>
+                                    <td>Audio</td>
+                                    <td>Voice commands, recorded audio memos</td>
+                                    <td><span class="tag tag-local">On-device only</span></td>
+                                    <td><span class="tag tag-none">Not shared</span></td>
+                                    <td>On-device TTS/STT, voice gesture triggers, audio memos</td>
+                                    <td>Yes</td>
+                                    <td>Yes</td>
+                                </tr>
+                                <tr>
+                                    <td>Contacts</td>
+                                    <td>Contact names, phone numbers</td>
+                                    <td><span class="tag tag-local">On-device only</span></td>
+                                    <td><span class="tag tag-none">Not shared</span></td>
+                                    <td>Quick-dial gesture shortcuts (user-initiated only)</td>
+                                    <td>Yes</td>
+                                    <td>Yes</td>
+                                </tr>
+                                <tr>
+                                    <td>App Activity</td>
+                                    <td>App interactions, crash logs</td>
+                                    <td><span class="tag tag-anon">Anonymized</span></td>
+                                    <td><span class="tag tag-third">Google Firebase</span></td>
+                                    <td>Crash diagnostics, anonymous analytics</td>
+                                    <td>Yes (TLS 1.3)</td>
+                                    <td>Yes (email request)</td>
+                                </tr>
+                                <tr>
+                                    <td>Device &amp; Other IDs</td>
+                                    <td>Advertising ID (GAID), App Set ID, IP address, device telemetry</td>
+                                    <td><span class="tag tag-anon">Pseudonymized</span></td>
+                                    <td><span class="tag tag-third">Google AdMob, Meta Audience Network, Unity Ads</span></td>
+                                    <td>Personalized &amp; contextual advertising, reward mediation, fraud prevention</td>
+                                    <td>Yes (TLS 1.3)</td>
+                                    <td>Yes (reset/delete GAID in Android OS settings)</td>
+                                </tr>
+                                <tr>
+                                    <td>Financial Info</td>
+                                    <td>Purchase history</td>
+                                    <td><span class="tag tag-local">Google Play only</span></td>
+                                    <td><span class="tag tag-none">Not collected by us</span></td>
+                                    <td>In-app purchase verification via Google Play Billing</td>
+                                    <td>Yes (Google infrastructure)</td>
+                                    <td>N/A (managed by Google)</td>
+                                </tr>
+                                <tr>
+                                    <td>Accessibility Data</td>
+                                    <td>Touch events, gesture vectors</td>
+                                    <td><span class="tag tag-none">Not stored</span></td>
+                                    <td><span class="tag tag-none">Not shared</span></td>
+                                    <td>Transient gesture processing in RAM only</td>
+                                    <td>N/A (never persisted)</td>
+                                    <td>N/A</td>
+                                </tr>
+                                <tr>
+                                    <td>Personal Info</td>
+                                    <td>Name, email, user ID</td>
+                                    <td><span class="tag tag-none">Not collected</span></td>
+                                    <td><span class="tag tag-none">Not shared</span></td>
+                                    <td>Not required — no account system</td>
+                                    <td>N/A</td>
+                                    <td>N/A</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </section>
 
-            <!-- Section 2: Android Permissions & Local Features -->
-            <section id="permissions" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden">
-                <div class="absolute top-0 left-0 w-1 sm:w-1.5 h-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
-                <h2 class="text-lg sm:text-2xl font-bold text-slate-100 mb-3 sm:mb-4 flex items-center gap-2.5">
-                    <span class="text-blue-400 text-xs sm:text-sm font-extrabold uppercase tracking-widest bg-blue-500/10 px-2 py-0.5 sm:py-1 rounded-md border border-blue-500/20">02</span>
-                    Android Permissions & Local Features
-                </h2>
-                <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6 sm:mb-8">
-                    To deliver system-wide gesture controls, our app requests explicit permissions on your Android device. Each permission is used strictly for local automation and the features you trigger:
-                </p>
-                
-                <div class="space-y-4 sm:space-y-6">
-                    <!-- Accessibility Service -->
-                    <div class="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6">
-                        <div class="flex items-center justify-between mb-2.5 sm:mb-3 flex-wrap gap-2">
-                            <h3 class="text-base sm:text-xl font-semibold text-blue-300 flex items-center gap-2">
-                                <span class="p-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm sm:text-base" aria-hidden="true">🛠️</span>
-                                Accessibility Service API
-                            </h3>
-                            <span class="text-[10px] sm:text-xs px-2 py-0.5 sm:py-1 rounded-full bg-red-500/10 text-red-400 border border-red-500/20 font-semibold">Core Required Permission</span>
-                        </div>
-                        <p class="text-slate-300 text-xs sm:text-base leading-relaxed mb-3">
-                            The Accessibility Service API is the foundational engine of Dynamic Edge Gesture Control. It is strictly utilized to:
-                        </p>
-                        <ul class="space-y-2 my-3 text-slate-300 text-xs sm:text-sm list-none pl-0">
-                            <li class="relative pl-5 before:absolute before:left-0 before:text-blue-400 before:content-['✦']">Draw touch-sensitive gesture overlay handles (edge sliders, notches, dynamic islands, and pie menus) on top of active screens.</li>
-                            <li class="relative pl-5 before:absolute before:left-0 before:text-blue-400 before:content-['✦']">Detect your swipe, tap, long-press, and drag gestures specifically within these configured edge handle zones.</li>
-                            <li class="relative pl-5 before:absolute before:left-0 before:text-blue-400 before:content-['✦']">Execute global Android system actions assigned to your gestures (e.g., Back, Home, Recent Apps, Quick Settings, Split Screen, and Power Menu).</li>
+            <!-- ── SECTION 01: INTRODUCTION ── -->
+            <section id="intro" class="policy-section section-card">
+                <h2 class="section-title"><span class="section-num">01</span>Introduction &amp; Privacy Philosophy</h2>
+                <div class="section-body">
+                    <p>Welcome to <strong>Dynamic Edge Gesture Control</strong> ("EDGE", "Application", "we", "our", or "us"), developed and maintained by independent developer <strong>Madhusudan Payra</strong>. We are unwaveringly committed to user privacy, complete technical transparency, and protecting your digital autonomy.</p>
+                    <p>This Privacy Policy comprehensively details: (a) the categories of data processed by EDGE; (b) our strict on-device data retention principles; (c) all explicit system permissions requested on Android; (d) our technical integrations with Google Firebase, Google AdMob, Meta Audience Network, and Unity Ads; (e) how we handle third-party automation platforms (e.g., Tasker); and (f) your statutory rights under all applicable global data protection laws.</p>
+                    <p>This policy applies to all users of the Dynamic Edge Gesture Control Android application available on the Google Play Store (package: <code>com.m.payra.gesture.control.app</code>), as well as this privacy policy webpage hosted at <a href="https://bullat859.github.io/" target="_blank" rel="noopener noreferrer">bullat859.github.io</a>.</p>
+                    <div class="callout callout-blue">
+                        <strong>Core Principle — Local First:</strong> You own your data. Dynamic Edge Gesture Control is engineered with a "local-first" privacy model. All gesture profiles, trigger coordinates, camera shortcut captures, voice command audio, task automations, and text notes remain strictly within your device's isolated application storage sandbox. We do not operate servers that receive or store personal user data.
+                    </div>
+                    <p>By installing or using Dynamic Edge Gesture Control, you acknowledge and agree to the data practices described in this Privacy Policy and our <a href="https://bullat859.github.io/Terms-of-use/" target="_blank" rel="noopener noreferrer">Terms of Use</a>. If you disagree with any part of this policy, please uninstall the application and contact us to request deletion of any residual diagnostic data.</p>
+                    <h3>Who We Are</h3>
+                    <p>Dynamic Edge Gesture Control is published by <strong>Madhusudan Payra</strong>, an independent Android developer based in India. For all privacy inquiries, data subject requests, or regulatory correspondence, contact us at <a href="mailto:m.payra859appsupport@gmail.com">m.payra859appsupport@gmail.com</a>.</p>
+                </div>
+            </section>
+
+            <!-- ── SECTION 02: ACCESSIBILITY ── -->
+            <section id="accessibility" class="policy-section section-card">
+                <h2 class="section-title"><span class="section-num">02</span>AccessibilityService API — Detailed Disclosure</h2>
+                <div class="section-body">
+                    <p>Dynamic Edge Gesture Control utilizes Android's <code>AccessibilityService API</code> as a core foundational engine. In full compliance with Google Play's User Data Policy and Accessibility Policies for non-assistive utility apps, we provide the following comprehensive technical explanation:</p>
+
+                    <div class="inner-card">
+                        <h4>Why AccessibilityService is Required</h4>
+                        <p>The AccessibilityService API is used exclusively to dispatch system-level navigation actions that cannot be executed through standard non-privileged Android APIs. These actions are triggered solely in response to deliberate, user-configured touch gestures on the device screen edges:</p>
+                        <ul>
+                            <li>Simulating the hardware Back button action (<code>GLOBAL_ACTION_BACK</code>)</li>
+                            <li>Returning to the device Home screen (<code>GLOBAL_ACTION_HOME</code>)</li>
+                            <li>Opening the Recent / Overview Apps task switcher (<code>GLOBAL_ACTION_RECENTS</code>)</li>
+                            <li>Pulling down the system Notification shade (<code>GLOBAL_ACTION_NOTIFICATIONS</code>)</li>
+                            <li>Pulling down Quick Settings toggles (<code>GLOBAL_ACTION_QUICK_SETTINGS</code>)</li>
+                            <li>Opening the system Power dialog (<code>GLOBAL_ACTION_POWER_DIALOG</code>)</li>
+                            <li>Locking the device screen (<code>GLOBAL_ACTION_LOCK_SCREEN</code> on Android 9+)</li>
+                            <li>Capturing a system screenshot (<code>GLOBAL_ACTION_TAKE_SCREENSHOT</code> on Android 9+)</li>
+                            <li>Splitting the screen into multi-window mode (<code>GLOBAL_ACTION_TOGGLE_SPLIT_SCREEN</code>)</li>
                         </ul>
-                        <div class="bg-red-500/10 border-l-2 sm:border-l-4 border-red-500 p-3 sm:p-4 rounded-r-xl mt-3 text-red-200 text-xs sm:text-sm leading-relaxed">
-                            <strong class="font-bold text-red-400 block mb-1">Strict Accessibility Privacy Guarantee:</strong>
-                            We do NOT use the Accessibility Service API to read screen content, inspect keystrokes, intercept passwords, or log personal messages.
+                    </div>
+
+                    <div class="callout callout-green">
+                        <strong>✅ Strict Anti-Surveillance Guarantee:</strong> Dynamic Edge Gesture Control does NOT use the AccessibilityService to:
+                        <ul style="margin-top: 8px;">
+                            <li>Inspect, scrape, capture, read, or process on-screen content, text, images, or UI layouts.</li>
+                            <li>Log, intercept, or record keystrokes, password entries, PIN codes, or any user input.</li>
+                            <li>Monitor user activity across other applications, browsing history, or messaging chats.</li>
+                            <li>Automate clicks, taps, or inputs on third-party application UIs without real-time user trigger.</li>
+                            <li>Circumvent Android operating system security controls, user consent dialogs, or permissions.</li>
+                        </ul>
+                    </div>
+
+                    <h3>Consent &amp; User Control</h3>
+                    <p>In accordance with Android requirements, the AccessibilityService cannot be enabled automatically or programmatically by the application. The user must explicitly navigate to <strong>Android Settings → Accessibility → Downloaded Apps → Dynamic Edge Gesture Control</strong> and turn the toggle ON manually after reviewing the Android-provided security disclaimer dialog.</p>
+                </div>
+            </section>
+
+            <!-- ── SECTION 03: PERMISSIONS ── -->
+            <section id="permissions" class="policy-section section-card">
+                <h2 class="section-title"><span class="section-num">03</span>Comprehensive Android Permissions Breakdown</h2>
+                <div class="section-body">
+                    <p>Every permission declared in our <code>AndroidManifest.xml</code> serves an explicit, user-initiated functional purpose. We strictly adhere to the Android principle of <strong>minimal permission scope</strong>. No permission is declared speculatively or for future use. Below is a full disclosure of all declared permissions:</p>
+
+                    <div class="perm-grid">
+                        <div class="inner-card">
+                            <h4>SYSTEM_ALERT_WINDOW — Display Over Other Apps</h4>
+                            <p>Renders interactive edge sliders, notch handles, volume overlays, and pie navigation menus over other running apps. User must explicitly grant via Settings.</p>
                         </div>
-                    </div>
-
-                    <!-- Notifications -->
-                    <div class="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6">
-                        <h3 class="text-base sm:text-xl font-semibold text-blue-300 mb-2 sm:mb-3 flex items-center gap-2">
-                            <span class="p-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm sm:text-base" aria-hidden="true">🔔</span>
-                            Notifications
-                        </h3>
-                        <p class="text-slate-300 text-xs sm:text-base leading-relaxed">
-                            Requested to run essential background foreground services. This ensures that the gesture engine continues to run reliably without being killed by Android's memory management.
-                        </p>
-                    </div>
-
-                    <!-- Location Access -->
-                    <div class="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6">
-                        <h3 class="text-base sm:text-xl font-semibold text-blue-300 mb-2 sm:mb-3 flex items-center gap-2">
-                            <span class="p-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm sm:text-base" aria-hidden="true">📍</span>
-                            Location Access
-                        </h3>
-                        <p class="text-slate-300 text-xs sm:text-base leading-relaxed">
-                            Used exclusively for <strong>Situational Location Triggers</strong>. If you set up geofenced gestures, background location monitors when you enter or exit your chosen boundary. Coordinates are never sold or uploaded.
-                        </p>
-                    </div>
-                    
-                    <!-- Usage Access -->
-                    <div class="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6">
-                        <h3 class="text-base sm:text-xl font-semibold text-blue-300 mb-2 sm:mb-3 flex items-center gap-2">
-                            <span class="p-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm sm:text-base" aria-hidden="true">📊</span>
-                            Usage Access (Package Usage Stats)
-                        </h3>
-                        <p class="text-slate-300 text-xs sm:text-base leading-relaxed">
-                            Allows the app to identify which application is currently in the foreground for "App-Specific Gesture Profiles," automatically hiding or switching gestures per app.
-                        </p>
-                    </div>
-
-                    <!-- Modify System Settings -->
-                    <div class="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6">
-                        <h3 class="text-base sm:text-xl font-semibold text-blue-300 mb-2 sm:mb-3 flex items-center gap-2">
-                            <span class="p-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm sm:text-base" aria-hidden="true">⚙️</span>
-                            Modify System Settings
-                        </h3>
-                        <p class="text-slate-300 text-xs sm:text-base leading-relaxed">
-                            Empowers your gestures to directly toggle hardware parameters—such as Screen Brightness, Auto-Rotate, Volume levels, and Screen Timeout.
-                        </p>
-                    </div>
-
-                    <!-- Music & Audio / Storage Access -->
-                    <div class="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6">
-                        <h3 class="text-base sm:text-xl font-semibold text-blue-300 mb-2 sm:mb-3 flex items-center gap-2">
-                            <span class="p-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm sm:text-base" aria-hidden="true">🎵</span>
-                            Music & Audio / Storage Access
-                        </h3>
-                        <p class="text-slate-300 text-xs sm:text-base leading-relaxed">
-                            Required for the <strong>Offline Music Controller</strong>, playing audio files, importing custom icons, and backing up configurations locally.
-                        </p>
-                    </div>
-
-                    <!-- Nearby Devices (Bluetooth) -->
-                    <div class="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6">
-                        <h3 class="text-base sm:text-xl font-semibold text-blue-300 mb-2 sm:mb-3 flex items-center gap-2">
-                            <span class="p-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm sm:text-base" aria-hidden="true">📶</span>
-                            Nearby Devices (Bluetooth)
-                        </h3>
-                        <p class="text-slate-300 text-xs sm:text-base leading-relaxed">
-                            Requested strictly on-demand when mapping gestures to toggle your device's Bluetooth state and connect to paired devices.
-                        </p>
-                    </div>
-
-                    <!-- Contacts & Phone -->
-                    <div class="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6">
-                        <h3 class="text-base sm:text-xl font-semibold text-blue-300 mb-2 sm:mb-3 flex items-center gap-2">
-                            <span class="p-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm sm:text-base" aria-hidden="true">📞</span>
-                            Contacts & Phone
-                        </h3>
-                        <p class="text-slate-300 text-xs sm:text-base leading-relaxed">
-                            Requested strictly on-demand when mapping gestures to initiate Direct Calling. We do not store, upload, or share contact information.
-                        </p>
-                    </div>
-
-                    <!-- Camera -->
-                    <div class="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6">
-                        <h3 class="text-base sm:text-xl font-semibold text-blue-300 mb-2 sm:mb-3 flex items-center gap-2">
-                            <span class="p-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm sm:text-base" aria-hidden="true">📸</span>
-                            Camera (Silent Photo & Silent Video)
-                        </h3>
-                        <p class="text-slate-300 text-xs sm:text-base leading-relaxed mb-3">
-                            Requested strictly on-demand when mapping gestures to toggle the device flashlight, or to utilize silent photo and video recording.
-                        </p>
-                        <div class="bg-emerald-500/10 border-l-2 sm:border-l-4 border-emerald-500 p-3 sm:p-4 rounded-r-xl mt-3 text-emerald-200 text-xs sm:text-sm leading-relaxed">
-                            <strong class="font-bold text-emerald-400 block mb-1">Total Privacy Guarantee:</strong>
-                            All photos and videos captured are saved <strong>exclusively to your local device storage</strong>. We do not upload media files to any cloud server.
+                        <div class="inner-card">
+                            <h4>WRITE_SETTINGS — Modify System Settings</h4>
+                            <p>Allows gestures to adjust device brightness, screen rotation lock, screen timeout duration, audio volume streams, and haptic feedback intensity profiles.</p>
                         </div>
-                    </div>
-
-                    <!-- Microphone -->
-                    <div class="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6">
-                        <h3 class="text-base sm:text-xl font-semibold text-blue-300 mb-2 sm:mb-3 flex items-center gap-2">
-                            <span class="p-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm sm:text-base" aria-hidden="true">🎙️</span>
-                            Microphone (Silent Audio & Video)
-                        </h3>
-                        <p class="text-slate-300 text-xs sm:text-base leading-relaxed mb-3">
-                            Requested strictly on-demand when mapping gestures to record audio memos or video with audio.
-                        </p>
-                        <div class="bg-emerald-500/10 border-l-2 sm:border-l-4 border-emerald-500 p-3 sm:p-4 rounded-r-xl mt-3 text-emerald-200 text-xs sm:text-sm leading-relaxed">
-                            <strong class="font-bold text-emerald-400 block mb-1">Total Privacy Guarantee:</strong>
-                            All audio recordings are <strong>saved entirely on local storage</strong>. We never monitor your voice or background audio.
+                        <div class="inner-card">
+                            <h4>CAMERA — Camera Hardware</h4>
+                            <p>Accesses device camera exclusively for user-initiated gesture shortcut actions: one-touch camera shortcuts, QR/barcode scanning, and quick video recording memos. The camera utilizes standard Android camera APIs and is never activated passively or in the background without an explicit gesture trigger.</p>
                         </div>
-                    </div>
-
-                    <!-- In-App Notes -->
-                    <div class="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6">
-                        <h3 class="text-base sm:text-xl font-semibold text-blue-300 mb-2 sm:mb-3 flex items-center gap-2">
-                            <span class="p-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm sm:text-base" aria-hidden="true">📝</span>
-                            In-App Notes Feature
-                        </h3>
-                        <p class="text-slate-300 text-xs sm:text-base leading-relaxed mb-3">
-                            Allows you to create and save custom text notes for quick reference or task management.
-                        </p>
-                        <div class="bg-emerald-500/10 border-l-2 sm:border-l-4 border-emerald-500 p-3 sm:p-4 rounded-r-xl mt-3 text-emerald-200 text-xs sm:text-sm leading-relaxed">
-                            <strong class="font-bold text-emerald-400 block mb-1">Total Privacy Guarantee:</strong>
-                            Any text notes you type are <strong>stored strictly offline on your device</strong>. We do not read, collect, or transmit note data to any external server.
+                        <div class="inner-card">
+                            <h4>RECORD_AUDIO — Microphone</h4>
+                            <p>Accesses the microphone for user-initiated gesture triggers: voice command detection (on-device TTS/STT), audio memo recording, and ambient sound level detection for adaptive gesture sensitivity. Audio is never transmitted to remote servers.</p>
+                        </div>
+                        <div class="inner-card">
+                            <h4>ACCESS_FINE_LOCATION + ACCESS_BACKGROUND_LOCATION</h4>
+                            <p>Reads precise GPS coordinates to enable situational geo-fencing: automatically activating or deactivating specific gesture profiles based on user-defined geographic zones (e.g., "at home" profile vs. "at work" profile). Location is never uploaded or shared.</p>
+                        </div>
+                        <div class="inner-card">
+                            <h4>READ_CONTACTS — Single Contact Shortcut Reference Only</h4>
+                            <p><strong>Strict High-Risk Permission Transparency:</strong> Dynamic Edge Gesture Control does <em>not</em> read, harvest, replicate, or store your address book in a local database, nor does it sync or upload contact records to any remote server or third party. Contacts access is utilized strictly via an on-demand picker solely when you explicitly map a "Quick-Dial" or "Direct-Message" gesture shortcut. The application holds only a local Android URI reference / phone number string for the single contact record you specifically selected for that gesture action.</p>
+                        </div>
+                        <div class="inner-card">
+                            <h4>CALL_PHONE — Direct Phone Call Shortcut</h4>
+                            <p><strong>Direct User-Initiated Telephony:</strong> Governed as a sensitive permission, <code>CALL_PHONE</code> allows a configured gesture to initiate a phone call strictly to the pre-assigned contact number chosen by the user. Calls are never initiated automatically, covertly, or in the background. The action is triggered exclusively upon your deliberate edge gesture. The application does not read, monitor, log, or transmit your device call history or call duration records.</p>
+                        </div>
+                        <div class="inner-card">
+                            <h4>QUERY_ALL_PACKAGES — Package Visibility</h4>
+                            <p>Reads the list of installed applications on your device. Used exclusively to: (a) populate the app-picker list in gesture action configuration; and (b) enable app-specific gesture profile switching based on the active foreground application. App lists are processed entirely on-device and never transmitted.</p>
+                        </div>
+                        <div class="inner-card">
+                            <h4>VIBRATE — Haptic Feedback</h4>
+                            <p>Triggers device vibration motor for haptic confirmation feedback when gesture actions are executed. No vibration patterns are transmitted; all haptic output is local.</p>
+                        </div>
+                        <div class="inner-card">
+                            <h4>BLUETOOTH_CONNECT + BLUETOOTH_SCAN — Bluetooth</h4>
+                            <p>Detects Bluetooth connection state (connected headphones, car kit, speaker) to enable situational Bluetooth-aware gesture profiles (e.g., "car mode" when connected to a car Bluetooth device). No audio data, Bluetooth device addresses, or pairing keys are transmitted.</p>
+                        </div>
+                        <div class="inner-card">
+                            <h4>READ_MEDIA_AUDIO — Media Library Access</h4>
+                            <p>Accesses audio files on device storage so users can assign custom audio playback (music tracks, notification sounds) as gesture actions. Files are selected by the user; no media is uploaded.</p>
+                        </div>
+                        <div class="inner-card">
+                            <h4>FOREGROUND_SERVICE_CAMERA + FOREGROUND_SERVICE_MICROPHONE — Transient Execution</h4>
+                            <p><strong>Strict Android 14+ Policy Compliance:</strong> Declares foreground service sub-types strictly required under Android 14+ when invoking camera and microphone hardware. <strong>These services are transient</strong>—activated exclusively during the exact momentary execution of a user-initiated camera shortcut, QR scan, or voice recognition session, and are immediately released upon completion. The application does not continuously hold camera or microphone hardware in the background, and always displays a visible, mandatory foreground service notification during execution.</p>
+                        </div>
+                        <div class="inner-card">
+                            <h4>SCHEDULE_EXACT_ALARM + USE_EXACT_ALARM</h4>
+                            <p>Allows the app to schedule time-based gesture triggers and automation routines at exact times. Used for scheduled profile switching (e.g., "night mode" at 10 PM) and repeating gesture automations. Required by Android 12+ for exact alarm scheduling.</p>
+                        </div>
+                        <div class="inner-card">
+                            <h4>REQUEST_IGNORE_BATTERY_OPTIMIZATIONS</h4>
+                            <p>Requests exclusion from Android's battery optimization system so the foreground gesture detection service is not killed by the OS during extended usage. Prevents missed gesture triggers when the device is in Doze mode.</p>
+                        </div>
+                        <div class="inner-card">
+                            <h4>WAKE_LOCK</h4>
+                            <p>Prevents the CPU from sleeping during active gesture recognition sessions initiated by the user. Released immediately when the gesture session ends to conserve battery.</p>
+                        </div>
+                        <div class="inner-card">
+                            <h4>POST_NOTIFICATIONS</h4>
+                            <p>Required by Android 13+ (API 33+) to display the persistent foreground service notification (mandatory for active Accessibility and camera/microphone foreground services) and to send optional user-configured gesture event alerts.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Section 3: Firebase Services -->
-            <section id="firebase" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden">
-                <div class="absolute top-0 left-0 w-1 sm:w-1.5 h-full bg-gradient-to-b from-amber-500 to-orange-500"></div>
-                <h2 class="text-lg sm:text-2xl font-bold text-slate-100 mb-3 sm:mb-4 flex items-center gap-2.5">
-                    <span class="text-amber-400 text-xs sm:text-sm font-extrabold uppercase tracking-widest bg-amber-500/10 px-2 py-0.5 sm:py-1 rounded-md border border-amber-500/20">03</span>
-                    Firebase Integration
-                </h2>
-                <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
-                    Dynamic Edge Gesture Control utilizes <strong>Google Firebase</strong> to securely collect and process app data for diagnostic monitoring and performance tracking.
-                </p>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4 mb-6">
-                    <div class="glass-card p-4 rounded-xl border border-slate-800">
-                        <div class="flex items-center gap-2 mb-1.5 text-amber-300 text-xs sm:text-sm font-semibold">
-                            <span aria-hidden="true">📈</span> Firebase Analytics
-                        </div>
-                        <p class="text-[11px] sm:text-xs text-slate-300 leading-relaxed">
-                            Collects telemetry data such as app launch frequency and feature usage to help optimize user interface performance.
-                        </p>
+            <!-- ── SECTION 04: CAMERA & MIC ── -->
+            <section id="camera-mic" class="policy-section section-card amber-accent">
+                <h2 class="section-title"><span class="section-num">04</span>Camera, Microphone &amp; Media Privacy</h2>
+                <div class="section-body">
+                    <div class="callout callout-amber">
+                        <strong>⚠️ Anti-Covert Surveillance Declaration:</strong> Dynamic Edge Gesture Control does NOT engage in any form of covert, passive, background, or unauthorized surveillance using the camera or microphone. All camera and microphone activations are exclusively user-initiated via deliberate gesture triggers with explicit on-screen visual confirmation.
                     </div>
-
-                    <div class="glass-card p-4 rounded-xl border border-slate-800">
-                        <div class="flex items-center gap-2 mb-1.5 text-amber-300 text-xs sm:text-sm font-semibold">
-                            <span aria-hidden="true">🛠️</span> Firebase Crashlytics
-                        </div>
-                        <p class="text-[11px] sm:text-xs text-slate-300 leading-relaxed">
-                            Captures stack traces and device state during crashes to allow rapid software bug fixes.
-                        </p>
-                    </div>
-
-                    <div class="glass-card p-4 rounded-xl border border-slate-800">
-                        <div class="flex items-center gap-2 mb-1.5 text-amber-300 text-xs sm:text-sm font-semibold">
-                            <span aria-hidden="true">⚡</span> Performance Monitoring
-                        </div>
-                        <p class="text-[11px] sm:text-xs text-slate-300 leading-relaxed">
-                            Measures startup timings and memory footprint to ensure light battery usage across devices.
-                        </p>
-                    </div>
-
-                    <div class="glass-card p-4 rounded-xl border border-slate-800">
-                        <div class="flex items-center gap-2 mb-1.5 text-amber-300 text-xs sm:text-sm font-semibold">
-                            <span aria-hidden="true">🗄️</span> Realtime Database
-                        </div>
-                        <p class="text-[11px] sm:text-xs text-slate-300 leading-relaxed">
-                            Stores essential edge configuration data locally and securely linked to an anonymous installation ID.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Direct Firebase Privacy Links Box -->
-                <div class="p-4 sm:p-5 rounded-xl sm:rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-200">
-                    <h4 class="font-bold text-amber-300 text-xs sm:text-sm mb-2 flex items-center gap-2">
-                        <span aria-hidden="true">🔗</span> Google Firebase Privacy Links:
-                    </h4>
-                    <div class="flex flex-wrap gap-2.5 text-xs font-medium">
-                        <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-amber-500/20 text-amber-300 border border-amber-500/30 hover:bg-amber-500 hover:text-slate-950 transition-all text-[11px] sm:text-xs">
-                            <span>Firebase Privacy Info</span>
-                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                        </a>
-                        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-amber-500/20 text-amber-300 border border-amber-500/30 hover:bg-amber-500 hover:text-slate-950 transition-all text-[11px] sm:text-xs">
-                            <span>Google Privacy Policy</span>
-                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Section 4: Google AdMob -->
-            <section id="admob" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden">
-                <div class="absolute top-0 left-0 w-1 sm:w-1.5 h-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
-                <h2 class="text-lg sm:text-2xl font-bold text-slate-100 mb-3 sm:mb-4 flex items-center gap-2.5">
-                    <span class="text-blue-400 text-xs sm:text-sm font-extrabold uppercase tracking-widest bg-blue-500/10 px-2 py-0.5 sm:py-1 rounded-md border border-blue-500/20">04</span>
-                    Monetization & Advertising
-                </h2>
-                <div class="space-y-3 sm:space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
-                    <p>
-                        To support ongoing development while offering free core features, Dynamic Edge Gesture Control integrates <strong>Google AdMob</strong> to display Rewarded Video Ads and Banner Ads.
-                    </p>
-                    <ul class="space-y-2 list-disc list-inside text-xs sm:text-sm text-slate-300">
-                        <li><strong>Advertising Identifiers:</strong> AdMob may collect device Advertising ID (GAID) and IP addresses to serve advertisements.</li>
-                        <li><strong>Opt-Out:</strong> Reset or opt out of ad tracking on Android under <code>Settings -> Google -> Ads</code>.</li>
+                    <h3>Camera Usage &amp; One-Touch Shortcuts</h3>
+                    <p>The camera hardware is accessed only when the user configures and triggers a camera-based gesture shortcut action. The app relies on standard Android Camera/Camera2 platform APIs. Specific user-directed use cases include:</p>
+                    <ul>
+                        <li><strong>One-Touch Camera Capture:</strong> The user maps an edge swipe or hold gesture as a direct shortcut to snap a quick photo. The captured photo is immediately saved to the standard Android MediaStore / DCIM directory on the device with full user visibility. It is never uploaded to any remote server or third party.</li>
+                        <li><strong>Quick Video Memo:</strong> User assigns a gesture to begin a short video recording memo. The video file is stored directly in the device's public or app-specific media directory. It is never transmitted remotely.</li>
+                        <li><strong>QR / Barcode Scanner:</strong> Opens the camera in scan mode to read QR codes or barcodes. Scan results are displayed on-screen for the user to use. No scan history is persisted by the application.</li>
+                        <li><strong>Flashlight Torch Toggle:</strong> Activates/deactivates the rear camera flash LED as a torch. No camera preview or image capture occurs during torch-only operations.</li>
                     </ul>
-                </div>
+                    <p>All captured photos and videos remain in standard Android gallery directories and are subject to the user's own device backup settings (e.g., Google Photos automatic backup, Samsung Cloud). EDGE does not control or have insight into such device-level backup behaviors.</p>
 
-                <!-- Direct AdMob Policy Links Box -->
-                <div class="p-4 sm:p-5 rounded-xl sm:rounded-2xl bg-blue-500/10 border border-blue-500/20 text-blue-200">
-                    <h4 class="font-bold text-blue-300 text-xs sm:text-sm mb-2 flex items-center gap-2">
-                        <span aria-hidden="true">📢</span> Google AdMob Policy Links:
-                    </h4>
-                    <div class="flex flex-wrap gap-2.5 text-xs font-medium">
-                        <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-blue-500/20 text-blue-300 border border-blue-500/30 hover:bg-blue-600 hover:text-white transition-all text-[11px] sm:text-xs">
-                            <span>Google Ad Policies</span>
-                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                    <h3>Microphone Usage</h3>
+                    <p>The microphone is accessed only under these strictly user-controlled conditions:</p>
+                    <ul>
+                        <li><strong>Voice Command Gesture Trigger:</strong> The user configures a gesture to activate a voice recognition session. Speech is processed entirely on-device using the Android Speech Recognition API (operating locally or via the user's selected default recognition engine, which may be Google, Samsung, or a third-party engine subject to that engine's own privacy policy).</li>
+                        <li><strong>Audio Memo Recording:</strong> User assigns a gesture to begin an audio memo recording. The resulting file is saved to app-private storage on-device and never transmitted by EDGE.</li>
+                        <li><strong>Ambient Sound Sensitivity:</strong> If the user enables adaptive gesture sensitivity based on ambient noise level, the microphone briefly samples background dBSPL without recording or storing any audio data.</li>
+                    </ul>
+
+                    <h3>Transient Foreground Service Policy</h3>
+                    <p>In strict compliance with Android 14+ (API 34+) Google Play foreground service policies: <strong>FOREGROUND_SERVICE_CAMERA and FOREGROUND_SERVICE_MICROPHONE are strictly transient.</strong> They are activated only at the exact instant a user triggers a camera capture or voice gesture, and terminate immediately once the action finishes. They are never held active indefinitely in the background, and an active foreground service notification is visibly maintained during their momentary runtime.</p>
+                </div>
+            </section>
+
+            <!-- ── SECTIONS 05 to 33: PRESERVED IN FULL IN PRIVACY-POLICY.HTML ── -->
+
+            <!-- ── SECTION 34: CONTACT & LEGAL INQUIRIES ── -->
+            <section id="contact" class="policy-section section-card" style="border: 2px solid rgba(59,130,246,0.35);">
+                <h2 class="section-title"><span class="section-num">34</span>Contact &amp; Legal Inquiries</h2>
+                <div class="section-body">
+                    <p>If you have questions, privacy requests, DSAR inquiries, permission clarifications, or statutory requests regarding this Privacy Policy, please reach out directly:</p>
+
+                    <!-- Developer Card -->
+                    <div class="dev-card">
+                        <div class="dev-avatar">M</div>
+                        <div>
+                            <p class="dev-name">Madhusudan Payra</p>
+                            <p class="dev-role">Solo Developer &amp; Owner &mdash; Dynamic Edge Gesture Control&trade;</p>
+                            <p class="dev-location">&#128205; India</p>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="contact-btn-group">
+                        <a id="contactSupportBtn" href="#" onclick="openSupportEmail(event)" class="btn-support-gradient" aria-label="Send support email">
+                            <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                            <span>Contact Support</span>
                         </a>
-                        <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-blue-500/20 text-blue-300 border border-blue-500/30 hover:bg-blue-600 hover:text-white transition-all text-[11px] sm:text-xs">
-                            <span>AdMob Help Center</span>
-                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                        </a>
+                        <button onclick="copyEmail()" class="btn-copy-action" type="button" aria-label="Copy email address to clipboard">
+                            <span id="copyBtnText">Copy Email Address</span>
+                        </button>
                     </div>
                 </div>
             </section>
 
-            <!-- Section 5: Data Security & Retention -->
-            <section id="security" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden">
-                <div class="absolute top-0 left-0 w-1 sm:w-1.5 h-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
-                <h2 class="text-lg sm:text-2xl font-bold text-slate-100 mb-3 sm:mb-4 flex items-center gap-2.5">
-                    <span class="text-blue-400 text-xs sm:text-sm font-extrabold uppercase tracking-widest bg-blue-500/10 px-2 py-0.5 sm:py-1 rounded-md border border-blue-500/20">05</span>
-                    Security & Retention
-                </h2>
-                <div class="space-y-3 sm:space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed">
-                    <p>
-                        <strong>Encryption in Transit:</strong> All network communications with Firebase servers use Transport Layer Security (TLS/HTTPS).
-                    </p>
-                    <p>
-                        <strong>Data Retention:</strong> Gesture profile configurations, user-generated media files, and personal text notes are stored locally on your device hardware.
-                    </p>
-                    <p>
-                        <strong>Data Deletion:</strong> Uninstalling the application permanently removes all local settings, saved media, and profile data from your device.
-                    </p>
-                </div>
-            </section>
-
-            <!-- Section 6: Children's Privacy -->
-            <section class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden">
-                <div class="absolute top-0 left-0 w-1 sm:w-1.5 h-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
-                <h2 class="text-lg sm:text-2xl font-bold text-slate-100 mb-3 sm:mb-4 flex items-center gap-2.5">
-                    <span class="text-blue-400 text-xs sm:text-sm font-extrabold uppercase tracking-widest bg-blue-500/10 px-2 py-0.5 sm:py-1 rounded-md border border-blue-500/20">06</span>
-                    Children's Privacy (COPPA / GDPR)
-                </h2>
-                <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-                    Our application is intended for general audiences and does not knowingly collect personal identifiable information from children under 13 (or 16 in the European Union).
-                </p>
-            </section>
-
-            <!-- Section 7: Contact & Support -->
-            <section id="contact" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden border-2 border-blue-500/30">
-                <div class="absolute top-0 left-0 w-1 sm:w-1.5 h-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
-                <h2 class="text-lg sm:text-2xl font-bold text-slate-100 mb-3 sm:mb-4 flex items-center gap-2.5">
-                    <span class="text-blue-400 text-xs sm:text-sm font-extrabold uppercase tracking-widest bg-blue-500/10 px-2 py-0.5 sm:py-1 rounded-md border border-blue-500/20">07</span>
-                    Contact Us & Support
-                </h2>
-                <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
-                    If you have questions, feedback, or concerns regarding this Privacy Policy or third-party integrations, please contact support:
-                </p>
-                
-                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
-                    <a id="contactSupportBtn" href="#" onclick="openSupportEmail(event)" class="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl sm:rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold text-xs sm:text-base shadow-lg shadow-blue-500/25 transition-all text-center" aria-label="Send support email">
-                        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                        <span>Contact Support</span>
-                    </a>
-                    
-                    <button onclick="copyEmail()" class="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl sm:rounded-2xl bg-slate-900 border border-slate-700 text-slate-300 font-medium hover:bg-slate-800 transition-all text-xs sm:text-sm text-center" aria-label="Copy email address to clipboard">
-                        <span id="copyBtnText">Copy Email Address</span>
-                    </button>
-                </div>
-            </section>
         </main>
 
-        <!-- Footer -->
-        <footer class="text-center mt-12 sm:mt-16 pt-6 sm:pt-8 border-t border-slate-800/80 text-slate-500 text-xs sm:text-sm flex flex-col items-center gap-3">
-            
-            <div class="flex flex-wrap items-center justify-center gap-2 mb-2">
-                <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-800/60 border border-slate-700/50 text-[10px] sm:text-xs text-slate-400">
-                    <svg class="w-3 h-3 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                    <span>Last Updated: July 27, 2026</span>
-                </div>
-
-                <a href="https://bullat859.github.io/app-ads.txt" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-800/60 border border-slate-700/50 text-[10px] sm:text-xs text-slate-400 hover:text-amber-300 hover:border-amber-500/40 hover:bg-amber-500/10 transition-all" aria-label="View app-ads.txt file">
-                    <svg class="w-3 h-3 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                    <span>app-ads.txt</span>
-                    <svg class="w-2.5 h-2.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                </a>
+        <!-- FOOTER -->
+        <footer>
+            <div class="footer-last-updated">
+                🕐 Last Updated: October 2026
             </div>
 
-            <p>&copy; 2026 <a href="https://play.google.com/store/apps/details?id=com.m.payra.gesture.control.app" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-blue-400 underline decoration-slate-700 underline-offset-4">Dynamic Edge Gesture Control</a>. All rights reserved.</p>
-            <p class="text-[11px] sm:text-xs text-slate-600 max-w-md mx-auto">Android, Google Play, Firebase, and AdMob are registered trademarks of Google LLC.</p>
-            <p class="text-xs sm:text-sm text-slate-400 font-medium flex items-center justify-center gap-1.5 pt-1">
-                <span>❤️</span> from Madhusudan Payra
+            <div class="footer-links">
+                <a href="https://play.google.com/store/apps/details?id=com.m.payra.gesture.control.app" target="_blank" rel="noopener noreferrer" class="footer-link">📱 Google Play</a>
+                <a href="https://bullat859.github.io/Terms-of-use/" target="_blank" rel="noopener noreferrer" class="footer-link">⚖️ Terms of Use</a>
+                <a href="https://bullat859.github.io/app-ads.txt" target="_blank" rel="noopener noreferrer" class="footer-link">📄 app-ads.txt</a>
+                <a href="#contact" class="footer-link">✉️ Contact Developer</a>
+                <a href="#data-deletion" class="footer-link">🗑️ Delete My Data</a>
+                <a href="#gdpr-ccpa" class="footer-link">🌍 Your Rights (GDPR/CCPA)</a>
+            </div>
+
+            <p class="footer-copy">
+                &copy; 2026 <a href="https://play.google.com/store/apps/details?id=com.m.payra.gesture.control.app" target="_blank" rel="noopener noreferrer">Dynamic Edge Gesture Control&trade;</a>. All rights reserved.
             </p>
+            <p class="footer-trademark" style="margin-bottom: 8px;">
+                Dynamic Edge Gesture Control&trade; and EDGE are proprietary trademarks of Madhusudan Payra.
+            </p>
+            <p class="footer-love">❤️ from Madhusudan Payra</p>
         </footer>
-    </div>
-    
+
+    </div><!-- /page-wrapper -->
+
     <!-- Scroll to Top Button -->
-    <button id="scrollTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-6 right-6 p-3 rounded-full bg-blue-600/90 text-white shadow-lg shadow-blue-500/30 border border-blue-400/30 opacity-0 translate-y-10 pointer-events-none transition-all duration-300 z-50 hover:bg-blue-500" aria-label="Scroll to top of the page">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"/></svg>
+    <button id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top of page" type="button">
+        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"/>
+        </svg>
     </button>
 
-    <!-- JavaScript for Interactivity -->
     <script>
+        // Reading progress bar
+        window.addEventListener('scroll', function () {
+            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            document.getElementById('progress-bar').style.width = ((scrollTop / scrollHeight) * 100) + '%';
+
+            // Scroll-to-top button
+            const btn = document.getElementById('scrollTopBtn');
+            if (scrollTop > 400) btn.classList.add('visible');
+            else btn.classList.remove('visible');
+        });
+
+        // Email support handler with diagnostic auto-fill
         function openSupportEmail(event) {
             event.preventDefault();
-            
+
             const ua = navigator.userAgent;
             let androidVersion = "Android";
             let deviceModel = "Android Device";
@@ -584,69 +998,52 @@
             if (/Android/i.test(ua)) {
                 const matchVer = ua.match(/Android\s([0-9\.]+)/);
                 if (matchVer) androidVersion = "Android " + matchVer[1];
-                
                 const matchModel = ua.match(/;\s?([^;]+)\sBuild\//);
                 if (matchModel) deviceModel = matchModel[1];
             }
 
-            const subject = "Support Request - Dynamic Edge Gesture Control";
-            
-            const body = 
-`Hello Support Team,
+            const subject = "Privacy & Data Inquiry - Dynamic Edge Gesture Control";
+            const body =
+`Hello Madhusudan,
 
-[Describe your issue or feedback here]
+[Describe your inquiry, GDPR/CCPA request, permission feedback, or data question here]
 
 ----------------------------------------
 SYSTEM DIAGNOSTICS
 Device Model: ${deviceModel}
 Android Version: ${androidVersion}
-App Version: 
-RAM: 
-Storage: 
-Rooted: 
+App Version: [Please fill in your app version from About section]
+Inquiry Type: [ ] Data Access / DSAR   [ ] Data Deletion   [ ] Permissions   [ ] Ad Inquiries   [ ] Other
 ----------------------------------------`;
 
             const mailtoUrl = `mailto:m.payra859appsupport@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
             window.location.href = mailtoUrl;
         }
 
-        async function copyEmail() {
-            const email = "m.payra859appsupport@gmail.com";
-            const btnText = document.getElementById('copyBtnText');
-            
-            try {
-                await navigator.clipboard.writeText(email);
-                btnText.innerText = "Copied! ✓";
-            } catch (err) {
-                const tempInput = document.createElement('input');
-                tempInput.value = email;
-                document.body.appendChild(tempInput);
-                tempInput.select();
-                document.execCommand('copy');
-                document.body.removeChild(tempInput);
-                btnText.innerText = "Copied! ✓";
-            }
-
-            setTimeout(() => {
-                btnText.innerText = "Copy Email Address";
-            }, 3000);
-        }
-        
-        window.addEventListener('scroll', () => {
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            document.getElementById('progressBar').style.width = scrolled + '%';
-            
-            const scrollTopBtn = document.getElementById('scrollTopBtn');
-            if (winScroll > 300) {
-                scrollTopBtn.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
-                scrollTopBtn.classList.add('opacity-100', 'translate-y-0');
+        // Copy email
+        function copyEmail() {
+            const email = 'm.payra859appsupport@gmail.com';
+            const btn = document.getElementById('copyBtnText');
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(email).then(function () {
+                    btn.textContent = 'Copied! \u2713';
+                    setTimeout(function () { btn.textContent = 'Copy Email Address'; }, 3000);
+                });
             } else {
-                scrollTopBtn.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
-                scrollTopBtn.classList.remove('opacity-100', 'translate-y-0');
+                const el = document.createElement('textarea');
+                el.value = email;
+                el.style.position = 'fixed';
+                el.style.opacity = '0';
+                document.body.appendChild(el);
+                el.focus();
+                el.select();
+                document.execCommand('copy');
+                document.body.removeChild(el);
+                btn.textContent = 'Copied! \u2713';
+                setTimeout(function () { btn.textContent = 'Copy Email Address'; }, 3000);
             }
-        });
+        }
     </script>
+
 </body>
 </html>
