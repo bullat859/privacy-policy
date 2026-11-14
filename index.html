@@ -467,6 +467,26 @@
             color: #ffffff;
             border-color: #475569;
         }
+        .btn-rate-play {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 20px;
+            border-radius: 14px;
+            background: rgba(6,78,59,0.35);
+            border: 1px solid rgba(4,120,87,0.5);
+            color: #6ee7b7;
+            font-size: 0.82rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .btn-rate-play:hover {
+            background: rgba(6,78,59,0.65);
+            color: #a7f3d0;
+            border-color: rgba(5,150,105,0.7);
+        }
 
         /* =====================================================
            FOOTER
@@ -621,30 +641,52 @@
             </div>
         </div>
 
-        <!-- STICKY SUB-NAV -->
-        <nav class="subnav" aria-label="Policy quick navigation">
+        <!-- SUB-NAV -->
+        <nav class="subnav" aria-label="Privacy policy sections">
             <div class="subnav-inner">
-                <a href="#summary" class="nav-pill">01. Summary</a>
-                <a href="#accessibility" class="nav-pill">02. Accessibility</a>
-                <a href="#permissions" class="nav-pill">03. Permissions</a>
-                <a href="#camera-mic" class="nav-pill">04. Camera &amp; Mic</a>
-                <a href="#location" class="nav-pill">05. Location</a>
-                <a href="#draw-overlay" class="nav-pill">06. Overlay</a>
-                <a href="#usage-stats" class="nav-pill">07. App Stats</a>
-                <a href="#notifications" class="nav-pill">08. Notifications</a>
-                <a href="#write-settings" class="nav-pill">09. Write Settings</a>
-                <a href="#billing" class="nav-pill">10. In-App Billing</a>
-                <a href="#advertising" class="nav-pill">11. Ad Networks</a>
-                <a href="#firebase" class="nav-pill">12. Firebase Analytics</a>
-                <a href="#gdpr-ccpa" class="nav-pill">13. GDPR &amp; CCPA</a>
-                <a href="#data-deletion" class="nav-pill">14. Data Deletion</a>
-                <a href="#contact" class="nav-pill">34. Contact Desk</a>
+                <a href="#data-safety" class="nav-pill">Data Safety</a>
+                <a href="#intro" class="nav-pill">Introduction</a>
+                <a href="#accessibility" class="nav-pill">Accessibility</a>
+                <a href="#permissions" class="nav-pill">Permissions</a>
+                <a href="#camera-mic" class="nav-pill">Camera &amp; Mic</a>
+                <a href="#voice" class="nav-pill">Voice Assistant</a>
+                <a href="#location" class="nav-pill">Location</a>
+                <a href="#overlays" class="nav-pill">Overlays</a>
+                <a href="#app-query" class="nav-pill">App Query</a>
+                <a href="#sensors" class="nav-pill">Sensors</a>
+                <a href="#billing" class="nav-pill">Billing</a>
+                <a href="#ad-networks" class="nav-pill">Ad Networks</a>
+                <a href="#firebase" class="nav-pill">Firebase Telemetry</a>
+                <a href="#eu-consent" class="nav-pill">EU Consent</a>
+                <a href="#tasker" class="nav-pill">Tasker</a>
+                <a href="#storage" class="nav-pill">Storage</a>
+                <a href="#network-security" class="nav-pill">Network Security</a>
+                <a href="#trademarks" class="nav-pill">Trademarks</a>
+                <a href="#biometric" class="nav-pill">Biometric</a>
+                <a href="#power" class="nav-pill">Battery &amp; Alarms</a>
+                <a href="#bluetooth" class="nav-pill">Bluetooth</a>
+                <a href="#notifications" class="nav-pill">Notifications</a>
+                <a href="#data-deletion" class="nav-pill">Data Deletion</a>
+                <a href="#children" class="nav-pill">Children (COPPA)</a>
+                <a href="#gdpr-ccpa" class="nav-pill">GDPR &amp; CCPA</a>
+                <a href="#us-state" class="nav-pill">US State Laws</a>
+                <a href="#bipa" class="nav-pill">BIPA</a>
+                <a href="#shine-light" class="nav-pill">Shine the Light</a>
+                <a href="#dpo" class="nav-pill">DPO Contact</a>
+                <a href="#policy-webpage" class="nav-pill">This Webpage</a>
+                <a href="#changes" class="nav-pill">Policy Changes</a>
+                <a href="#liability" class="nav-pill">Liability</a>
+                <a href="#indemnification" class="nav-pill">Indemnification</a>
+                <a href="#security" class="nav-pill">Data Security</a>
+                <a href="#contact" class="nav-pill">Contact</a>
             </div>
         </nav>
 
+        <!-- MAIN SECTIONS -->
         <main>
-            <!-- ── SECTION 00: DATA SAFETY TABLE ── -->
-            <section id="data-safety-matrix" class="policy-section section-card">
+
+            <!-- ── SECTION 00: DATA SAFETY MATRIX ── -->
+            <section id="data-safety" class="policy-section section-card">
                 <h2 class="section-title"><span class="section-num">00</span>Google Play Data Safety Matrix</h2>
                 <div class="section-body">
                     <p>In compliance with Google Play's mandatory Data Safety disclosure requirements, the following table summarizes every category of data our application may access, collect, or process, and how it is handled. This mirrors the information submitted in the Google Play Console Data Safety form.</p>
@@ -709,12 +751,12 @@
                                 </tr>
                                 <tr>
                                     <td>Device &amp; Other IDs</td>
-                                    <td>Advertising ID (GAID), App Set ID, IP address, device telemetry</td>
+                                    <td>Advertising ID (GAID), App Set ID, IP address, and App-Scoped Android ID (SSAID / <code>Settings.Secure.ANDROID_ID</code>, collected only upon optional external promo code redemption)</td>
                                     <td><span class="tag tag-anon">Pseudonymized</span></td>
-                                    <td><span class="tag tag-third">Google AdMob, Meta Audience Network, Unity Ads</span></td>
-                                    <td>Personalized &amp; contextual advertising, reward mediation, fraud prevention</td>
-                                    <td>Yes (TLS 1.3)</td>
-                                    <td>Yes (reset/delete GAID in Android OS settings)</td>
+                                    <td><span class="tag tag-third">Google AdMob, Meta, Unity Ads &amp; Private Promo Backend</span></td>
+                                    <td>Personalized advertising, promotional code licensing, fraud prevention &amp; single-device entitlement binding</td>
+                                    <td>Yes (TLS 1.3 / HTTPS)</td>
+                                    <td>Yes (contact developer or promo expiration)</td>
                                 </tr>
                                 <tr>
                                     <td>Financial Info</td>
@@ -746,6 +788,12 @@
                             </tbody>
                         </table>
                     </div>
+                    <div class="callout callout-blue" style="margin-top:14px;">
+                        <strong>📌 Note:</strong> "On-device only" means the data is processed and stored exclusively within your device's sandboxed application storage and never transmitted to our servers or any third-party servers (except where explicitly indicated above as Google Firebase or AdMob).
+                    </div>
+                    <div class="callout callout-purple" style="margin-top:14px;">
+                        <strong>🎟️ External Promotional Code &amp; Device Identifier (SSAID) Disclosure:</strong> When an external promotional code is redeemed, an app-scoped device identifier (<code>Settings.Secure.ANDROID_ID</code> / SSAID) is transmitted via encrypted HTTPS to our backend spreadsheet. This identifier is used exclusively for licensing, subscription entitlement verification, and preventing code duplication abuse. It is strictly tied to this application's signing key, is never used for advertising, behavioral profiling, or cross-app tracking, and is never shared with third-party data brokers or marketing networks.
+                    </div>
                 </div>
             </section>
 
@@ -754,14 +802,14 @@
                 <h2 class="section-title"><span class="section-num">01</span>Introduction &amp; Privacy Philosophy</h2>
                 <div class="section-body">
                     <p>Welcome to <strong>Dynamic Edge Gesture Control</strong> ("EDGE", "Application", "we", "our", or "us"), developed and maintained by independent developer <strong>Madhusudan Payra</strong>. We are unwaveringly committed to user privacy, complete technical transparency, and protecting your digital autonomy.</p>
-                    <p>This Privacy Policy comprehensively details: (a) the categories of data processed by EDGE; (b) our strict on-device data retention principles; (c) all explicit system permissions requested on Android; (d) our technical integrations with Google Firebase, Google AdMob, Meta Audience Network, and Unity Ads; (e) how we handle third-party automation platforms (e.g., Tasker); and (f) your statutory rights under all applicable global data protection laws.</p>
+                    <p>This Privacy Policy comprehensively details: (a) the categories of data processed by EDGE; (b) our strict on-device data retention principles; (c) all explicit system permissions requested on Android; (d) our technical integrations with Google Firebase and Google AdMob; (e) how we handle third-party automation platforms (e.g., Tasker); and (f) your statutory rights under all applicable global data protection laws.</p>
                     <p>This policy applies to all users of the Dynamic Edge Gesture Control Android application available on the Google Play Store (package: <code>com.m.payra.gesture.control.app</code>), as well as this privacy policy webpage hosted at <a href="https://bullat859.github.io/" target="_blank" rel="noopener noreferrer">bullat859.github.io</a>.</p>
                     <div class="callout callout-blue">
                         <strong>Core Principle — Local First:</strong> You own your data. Dynamic Edge Gesture Control is engineered with a "local-first" privacy model. All gesture profiles, trigger coordinates, camera shortcut captures, voice command audio, task automations, and text notes remain strictly within your device's isolated application storage sandbox. We do not operate servers that receive or store personal user data.
                     </div>
                     <p>By installing or using Dynamic Edge Gesture Control, you acknowledge and agree to the data practices described in this Privacy Policy and our <a href="https://bullat859.github.io/Terms-of-use/" target="_blank" rel="noopener noreferrer">Terms of Use</a>. If you disagree with any part of this policy, please uninstall the application and contact us to request deletion of any residual diagnostic data.</p>
                     <h3>Who We Are</h3>
-                    <p>Dynamic Edge Gesture Control is published by <strong>Madhusudan Payra</strong>, an independent Android developer based in India. For all privacy inquiries, data subject requests, or regulatory correspondence, contact us at <a href="mailto:m.payra859appsupport@gmail.com">m.payra859appsupport@gmail.com</a>.</p>
+                    <p>Dynamic Edge Gesture Control is published by <strong>Madhusudan Payra</strong>, an independent Android developer based in India. For all privacy inquiries, data subject requests, or regulatory correspondence, contact us at <a href="mailto:m.payra859appsupport@gmail.com">m.payra859appsupport@gmail.com</a>. For GDPR-specific requests, see Section 28 (DPO Contact &amp; GDPR Representative).</p>
                 </div>
             </section>
 
@@ -773,33 +821,27 @@
 
                     <div class="inner-card">
                         <h4>Why AccessibilityService is Required</h4>
-                        <p>The AccessibilityService API is used exclusively to dispatch system-level navigation actions that cannot be executed through standard non-privileged Android APIs. These actions are triggered solely in response to deliberate, user-configured touch gestures on the device screen edges:</p>
                         <ul>
-                            <li>Simulating the hardware Back button action (<code>GLOBAL_ACTION_BACK</code>)</li>
-                            <li>Returning to the device Home screen (<code>GLOBAL_ACTION_HOME</code>)</li>
-                            <li>Opening the Recent / Overview Apps task switcher (<code>GLOBAL_ACTION_RECENTS</code>)</li>
-                            <li>Pulling down the system Notification shade (<code>GLOBAL_ACTION_NOTIFICATIONS</code>)</li>
-                            <li>Pulling down Quick Settings toggles (<code>GLOBAL_ACTION_QUICK_SETTINGS</code>)</li>
-                            <li>Opening the system Power dialog (<code>GLOBAL_ACTION_POWER_DIALOG</code>)</li>
-                            <li>Locking the device screen (<code>GLOBAL_ACTION_LOCK_SCREEN</code> on Android 9+)</li>
-                            <li>Capturing a system screenshot (<code>GLOBAL_ACTION_TAKE_SCREENSHOT</code> on Android 9+)</li>
-                            <li>Splitting the screen into multi-window mode (<code>GLOBAL_ACTION_TOGGLE_SPLIT_SCREEN</code>)</li>
+                            <li><strong>Drawing Overlay Gesture Zones:</strong> To render interactive edge bars, dynamic island handles, notch overlays, floating bubbles, and pie menus over other active apps on the perimeter of your screen.</li>
+                            <li><strong>Touch &amp; Swipe Motion Tracking:</strong> To calculate touch vectors, drag velocity, swipe angles, hold durations, and fling gestures within user-configured edge zones.</li>
+                            <li><strong>Performing Global System Actions:</strong> To execute system-level actions on behalf of the user when a gesture is triggered — including: Back (<code>GLOBAL_ACTION_BACK</code>), Home (<code>GLOBAL_ACTION_HOME</code>), Recents (<code>GLOBAL_ACTION_RECENTS</code>), Notifications (<code>GLOBAL_ACTION_NOTIFICATIONS</code>), Quick Settings (<code>GLOBAL_ACTION_QUICK_SETTINGS</code>), Lock Screen (<code>GLOBAL_ACTION_LOCK_SCREEN</code>), Power Dialog (<code>GLOBAL_ACTION_POWER_DIALOG</code>), Screenshot (<code>GLOBAL_ACTION_TAKE_SCREENSHOT</code>), and Split-Screen (<code>GLOBAL_ACTION_TOGGLE_SPLIT_SCREEN</code>).</li>
+                            <li><strong>Active Window Detection:</strong> To read the package name of the currently active foreground application solely for app-specific gesture profile switching (e.g., different profiles for gaming apps vs. browser). No window text, view hierarchy content, or UI element data is read or logged.</li>
                         </ul>
                     </div>
 
-                    <div class="callout callout-green">
-                        <strong>✅ Strict Anti-Surveillance Guarantee:</strong> Dynamic Edge Gesture Control does NOT use the AccessibilityService to:
-                        <ul style="margin-top: 8px;">
-                            <li>Inspect, scrape, capture, read, or process on-screen content, text, images, or UI layouts.</li>
-                            <li>Log, intercept, or record keystrokes, password entries, PIN codes, or any user input.</li>
-                            <li>Monitor user activity across other applications, browsing history, or messaging chats.</li>
-                            <li>Automate clicks, taps, or inputs on third-party application UIs without real-time user trigger.</li>
-                            <li>Circumvent Android operating system security controls, user consent dialogs, or permissions.</li>
-                        </ul>
+                    <div class="callout callout-red">
+                        <strong>⛔ Strict Accessibility Privacy Guarantee:</strong> Dynamic Edge Gesture Control <em>NEVER</em> uses the AccessibilityService to inspect, monitor, scrape, capture, record, or log your screen contents, UI element text, typed characters, passwords, PINs, credit card numbers, personal communications, banking credentials, OTPs, or biometric data. Accessibility touch events are processed transiently in device RAM only and instantly discarded upon gesture execution. We do <em>NOT</em> declare <code>isAccessibilityTool="true"</code> because this application is a personalization and system control utility — not an assistive technology.
                     </div>
 
-                    <h3>Consent &amp; User Control</h3>
-                    <p>In accordance with Android requirements, the AccessibilityService cannot be enabled automatically or programmatically by the application. The user must explicitly navigate to <strong>Android Settings → Accessibility → Downloaded Apps → Dynamic Edge Gesture Control</strong> and turn the toggle ON manually after reviewing the Android-provided security disclaimer dialog.</p>
+                    <h3>How to Revoke AccessibilityService Access</h3>
+                    <p>You may revoke Accessibility permission at any time without uninstalling the app:</p>
+                    <ol>
+                        <li>Go to <strong>Android Settings</strong> → <strong>Accessibility</strong></li>
+                        <li>Find <strong>Installed Services</strong> or <strong>Downloaded Apps</strong></li>
+                        <li>Tap <strong>Dynamic Edge Gesture Control</strong></li>
+                        <li>Toggle the service <strong>OFF</strong></li>
+                    </ol>
+                    <p>Revoking this permission will disable gesture recognition and system navigation features. Core app settings and configuration will remain intact.</p>
                 </div>
             </section>
 
@@ -871,6 +913,10 @@
                             <p>Prevents the CPU from sleeping during active gesture recognition sessions initiated by the user. Released immediately when the gesture session ends to conserve battery.</p>
                         </div>
                         <div class="inner-card">
+                            <h4>INTERNET</h4>
+                            <p>Enables outbound network connectivity for: (a) Google Firebase crash reporting and anonymous analytics; (b) Google AdMob ad network communication; (c) Google Play Billing transaction verification; and (d) downloading app update metadata from Google Play. No personal user data is transmitted over this connection beyond what is disclosed in Sections 10 and 11.</p>
+                        </div>
+                        <div class="inner-card">
                             <h4>POST_NOTIFICATIONS</h4>
                             <p>Required by Android 13+ (API 33+) to display the persistent foreground service notification (mandatory for active Accessibility and camera/microphone foreground services) and to send optional user-configured gesture event alerts.</p>
                         </div>
@@ -908,9 +954,670 @@
                 </div>
             </section>
 
-            <!-- ── SECTIONS 05 to 33: PRESERVED IN FULL IN PRIVACY-POLICY.HTML ── -->
+            <!-- ── SECTION 05: VOICE ASSISTANT ── -->
+            <section id="voice" class="policy-section section-card">
+                <h2 class="section-title"><span class="section-num">05</span>Voice Assistant &amp; Speech Processing Privacy</h2>
+                <div class="section-body">
+                    <p>Dynamic Edge Gesture Control includes an optional Voice Assistant integration that allows users to trigger gesture actions via spoken voice commands. This feature operates under the following privacy architecture:</p>
+                    <ul>
+                        <li><strong>On-Device Speech Recognition:</strong> All voice command processing is performed locally using Android's built-in <code>SpeechRecognizer</code> framework or the user's selected speech recognition engine. EDGE does not operate its own speech recognition server.</li>
+                        <li><strong>No Voice Audio Stored by EDGE:</strong> Audio captured during a voice command session is not persisted by Dynamic Edge Gesture Control. Once the recognized command is processed and the corresponding action executed, the audio session buffer is cleared from memory.</li>
+                        <li><strong>Third-Party Speech Engines:</strong> If your device uses a third-party speech recognition engine (Google Assistant, Samsung Bixby, or others), that engine's audio processing and privacy policy apply to the speech recognition component independently. EDGE does not control what data those engines may retain.</li>
+                        <li><strong>Wake-Word Detection:</strong> EDGE does not implement any passive wake-word or always-listening hot-word detection. Voice command sessions are exclusively initiated by explicit, user-triggered gesture actions.</li>
+                        <li><strong>Text-to-Speech (TTS) Output:</strong> Voice feedback and status announcements use the Android TTS engine. No text content is transmitted; synthesis occurs entirely on-device.</li>
+                    </ul>
+                </div>
+            </section>
 
-            <!-- ── SECTION 34: CONTACT & LEGAL INQUIRIES ── -->
+            <!-- ── SECTION 06: LOCATION ── -->
+            <section id="location" class="policy-section section-card">
+                <h2 class="section-title"><span class="section-num">06</span>Location Data &amp; Geo-Fencing Privacy</h2>
+                <div class="section-body">
+                    <p>Dynamic Edge Gesture Control may request access to your device's location (both foreground and background) to power the Situational Geo-Fencing feature. This is an entirely optional feature that users must explicitly enable and configure.</p>
+                    <h3>How Location is Used</h3>
+                    <ul>
+                        <li><strong>Gesture Profile Auto-Switching:</strong> Location coordinates are compared against user-defined geographic zones (polygons or radius circles drawn in app settings) to automatically activate the appropriate gesture profile. For example: activating a "Driving Mode" gesture layout when the device enters a car's Bluetooth range and a defined location zone simultaneously.</li>
+                        <li><strong>Background Location (<code>ACCESS_BACKGROUND_LOCATION</code>):</strong> Required because gesture profile switching must function even when the app is not in the foreground. We request this permission only when the user enables the Geo-Fencing feature and explains the purpose clearly at permission request time.</li>
+                    </ul>
+                    <div class="callout callout-green">
+                        <strong>✅ Location Data Guarantee:</strong> Location coordinates are compared against locally stored geo-fence definitions on your device. No location data is ever transmitted to our servers, third-party analytics services, or advertising networks. Location access stops immediately when the Geo-Fencing feature is disabled in app settings or when the permission is revoked.
+                    </div>
+                    <h3>How to Disable Location Access</h3>
+                    <p>Navigate to <strong>Settings → Apps → Dynamic Edge Gesture Control → Permissions → Location</strong> and select "Deny" or "Allow only while using the app" to restrict background access. The geo-fencing feature will be automatically disabled but all other features remain operational.</p>
+                </div>
+            </section>
+
+            <!-- ── SECTION 07: OVERLAYS ── -->
+            <section id="overlays" class="policy-section section-card">
+                <h2 class="section-title"><span class="section-num">07</span>System Overlays, Edge Trigger Zones &amp; Floating UI</h2>
+                <div class="section-body">
+                    <p>The <code>SYSTEM_ALERT_WINDOW</code> ("Draw over other apps") permission is central to EDGE's core functionality. This permission allows the app to render interactive UI elements on top of other applications and the system interface.</p>
+                    <h3>Overlay Use Cases</h3>
+                    <ul>
+                        <li><strong>Edge Trigger Bars:</strong> Thin, semi-transparent, customizable edge strips along the left, right, top, or bottom screen edges that detect user swipe and hold gestures.</li>
+                        <li><strong>Dynamic Island / Notch Handles:</strong> Interactive handles rendered in the camera notch or dynamic island area for quick action access.</li>
+                        <li><strong>Floating Bubbles / Launchers:</strong> Draggable circular floating widgets that expand into quick-action menus.</li>
+                        <li><strong>Pie Navigation Menus:</strong> Radial context menus triggered by long-press or swipe-and-hold gestures.</li>
+                        <li><strong>Notification / Volume HUD:</strong> Compact heads-up overlays for volume adjustment and notification preview.</li>
+                    </ul>
+                    <div class="callout callout-red">
+                        <strong>⛔ Overlay Privacy Guarantee:</strong> Our overlay UI elements do NOT capture, record, screenshot, or transmit any content displayed by other applications visible beneath or behind our overlay views. Overlay touch events are processed exclusively for gesture detection and are discarded immediately after action dispatch.
+                    </div>
+                    <p>You can disable the overlay permission at any time: <strong>Settings → Apps → Dynamic Edge Gesture Control → Display over other apps → OFF</strong>. This will disable edge trigger rendering but other settings remain intact.</p>
+                </div>
+            </section>
+
+            <!-- ── SECTION 08: APP QUERY ── -->
+            <section id="app-query" class="policy-section section-card">
+                <h2 class="section-title"><span class="section-num">08</span>App Package Querying (<code>QUERY_ALL_PACKAGES</code>)</h2>
+                <div class="section-body">
+                    <p>Dynamic Edge Gesture Control declares the <code>QUERY_ALL_PACKAGES</code> permission in its manifest. Google Play requires explicit justification for this permission, and we provide it here in full:</p>
+                    <div class="callout callout-blue">
+                        <strong>Purpose:</strong> This permission is required to enumerate installed applications on your device for two specific features: (1) the <strong>App Picker</strong> in gesture action configuration (so users can select any installed app to open via a gesture), and (2) <strong>App-Specific Gesture Profiles</strong> (so the service can detect which app is currently in the foreground and switch to the correct gesture layout automatically).
+                    </div>
+                    <h3>Privacy Safeguards for Package Querying</h3>
+                    <ul>
+                        <li>The list of installed applications is queried and displayed entirely on-device. It is never uploaded, transmitted, or shared with any external service.</li>
+                        <li>The application does not build analytics profiles based on installed app data.</li>
+                        <li>No sensitive app categories (e.g., banking apps, health apps, adult content apps) are specifically targeted or logged.</li>
+                        <li>The package visibility list is refreshed locally each time the App Picker is opened and is not cached persistently.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- ── SECTION 09: SENSORS ── -->
+            <section id="sensors" class="policy-section section-card">
+                <h2 class="section-title"><span class="section-num">09</span>Physical Hardware Sensors, Haptics &amp; Device Hardware</h2>
+                <div class="section-body">
+                    <p>Dynamic Edge Gesture Control may access the following device hardware sensors to enhance gesture precision and enable contextual trigger conditions:</p>
+                    <div class="perm-grid">
+                        <div class="inner-card">
+                            <h4>Accelerometer &amp; Gyroscope</h4>
+                            <p>Detects device orientation, tilt angle, and shake motion to enable gesture triggers based on physical device movement (e.g., "shake twice" gesture). Sensor readings are processed on-device and not recorded.</p>
+                        </div>
+                        <div class="inner-card">
+                            <h4>Proximity Sensor</h4>
+                            <p>Used to detect when the device is held near the user's face (e.g., during a phone call) to temporarily suspend edge gesture detection and prevent accidental triggers.</p>
+                        </div>
+                        <div class="inner-card">
+                            <h4>Fingerprint / Biometric Sensor</h4>
+                            <p>If the user configures biometric authentication as a lock for EDGE's settings panel, the device's biometric hardware is invoked through Android's <code>BiometricPrompt</code> API. See Section 18 (Biometric Authentication) for full disclosure.</p>
+                        </div>
+                        <div class="inner-card">
+                            <h4>Vibration Motor (Haptics)</h4>
+                            <p>The <code>VIBRATE</code> permission allows EDGE to produce haptic feedback pulses confirming successful gesture recognition. No vibration data is transmitted. Pattern intensity and style are configurable in app settings.</p>
+                        </div>
+                        <div class="inner-card">
+                            <h4>Screen Brightness Sensor (Ambient Light)</h4>
+                            <p>Reads ambient light level to enable adaptive screen brightness adjustment as a gesture action. Sensor readings are processed transiently and not stored.</p>
+                        </div>
+                        <div class="inner-card">
+                            <h4>Battery Status</h4>
+                            <p>Reads current battery level to enable battery-level-conditional gesture profiles (e.g., activating a power-saving overlay when battery drops below 20%). Not transmitted remotely.</p>
+                        </div>
+                    </div>
+                    <div class="callout callout-green">
+                        <strong>✅ All sensor readings are used exclusively on-device for gesture recognition and trigger conditions. No sensor data is stored to disk persistently or transmitted to any external server.</strong>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ── SECTION 10: BILLING & PROMOTIONAL CODES ── -->
+            <section id="billing" class="policy-section section-card">
+                <h2 class="section-title"><span class="section-num">10</span>Billing, In-App Purchases &amp; Promotional Codes</h2>
+                <div class="section-body">
+                    <p>Dynamic Edge Gesture Control offers optional in-app purchases and/or a premium subscription tier to unlock advanced gesture customization features, additional gesture action types, backup/restore capabilities, and ad-free usage. All commercial billing and payment processing is handled exclusively by <strong>Google Play Billing</strong>.</p>
+
+                    <h3>Promotional Codes &amp; Device-Bound Entitlement</h3>
+                    <p>To reward community contributors, beta testers, and promotional campaign participants, the application supports two methods of promotional code redemption:</p>
+                    <ul>
+                        <li><strong>Lifetime Play Store Promo Codes:</strong> Official Google Play Store promotional codes redeemable directly through Google Play (<code>play.google.com/redeem</code>). All entitlements are governed and validated by Google's infrastructure.</li>
+                        <li><strong>External Promotional Codes (Direct Creator Promotions):</strong> Time-limited promotional codes (e.g., 1-week, 1-month, 2-month, 3-month, or 1-year plans) provided directly by the developer. When you redeem an external promo code, the application verifies the code against our private, encrypted Google Sheets backend.</li>
+                    </ul>
+
+                    <div class="callout callout-purple">
+                        <strong>🔒 Device Identifier (SSAID) Collection for External Promo Codes:</strong> In accordance with Google Play's User Data &amp; Device Identifiers Policy:
+                        <ul style="margin-top: 8px;">
+                            <li>When redeeming an external promo code, the application reads the device's app-specific Android ID (<code>Settings.Secure.ANDROID_ID</code> / SSAID) and sends it over encrypted HTTPS to our backend.</li>
+                            <li><strong>Purpose &amp; Scope:</strong> This identifier is utilized strictly for <em>App Functionality</em> (tracking active subscription start and expiry dates) and <em>Fraud Prevention</em> (binding each code to a single hardware device to prevent unauthorized code sharing, scraping, or multi-device abuse).</li>
+                            <li><strong>Scoped Privacy Guarantee:</strong> Under Android 8.0+ (API 26+), the SSAID is unique to this app and our developer signing key; it cannot be correlated with other applications on your device. It is never used for advertising, behavioral profiling, or shared with third parties.</li>
+                            <li><strong>Optional Participation:</strong> External promo code redemption is 100% voluntary. Users who do not redeem external promotional codes never have their SSAID collected or transmitted.</li>
+                        </ul>
+                    </div>
+
+                    <h3>What We Receive from Google Play Billing</h3>
+                    <ul>
+                        <li>A boolean acknowledgment confirming whether a specific purchase or subscription is active ("entitled").</li>
+                        <li>A non-personal purchase token (a pseudonymous string) generated by Google Play for purchase verification and subscription management.</li>
+                    </ul>
+                    <div class="callout callout-red">
+                        <strong>⛔ Payment Data We Do NOT Receive:</strong> Dynamic Edge Gesture Control does NOT receive, store, or process your credit card number, debit card details, bank account information, PayPal credentials, UPI ID, or any other financial payment instrument data. All financial transactions are conducted exclusively between you and Google LLC via Google Play's secure payment infrastructure. Please refer to <a href="https://payments.google.com/payments/apis-secure/get_legal_document?ldo=0&ldt=privacynotice&ldl=en" target="_blank" rel="noopener noreferrer">Google Payments Privacy Notice</a> for details.
+                    </div>
+                    <h3>Refund Policy</h3>
+                    <p>All refund requests for in-app purchases or subscriptions are processed via Google Play's refund mechanism. You can request a refund through <strong>Google Play → Order History → Request a Refund</strong>. We do not process refunds independently.</p>
+                    <h3>Subscription Auto-Renewal</h3>
+                    <p>If you subscribe to a premium plan, your subscription will auto-renew through Google Play at the end of each billing period unless cancelled at least 24 hours before the renewal date. Manage and cancel subscriptions via <strong>Google Play → Subscriptions</strong>.</p>
+                </div>
+            </section>
+
+            <!-- ── SECTION 11: ADVERTISING NETWORKS ── -->
+            <section id="ad-networks" class="policy-section section-card amber-accent">
+                <h2 class="section-title"><span class="section-num">11</span>Mobile Advertising Networks (Google AdMob, Meta Audience Network, Unity Ads)</h2>
+                <div class="section-body">
+                    <p>To support the ongoing development, optimization, and serverless maintenance of Dynamic Edge Gesture Control while keeping core navigation and gesture customization tools 100% free for all users, our free tier displays advertisements brokered and mediated through leading, certified mobile ad networks: <strong>Google AdMob</strong>, <strong>Meta Audience Network (Facebook Ads)</strong>, and <strong>Unity Ads</strong>.</p>
+
+                    <h3>Integrated Ad Partner SDKs</h3>
+                    <p>Depending on your geographic territory, device characteristics, consent selections, and ad inventory availability, advertisements (including non-intrusive banner strips, transition interstitials, and opt-in rewarded video formats for unlocking specific customization themes) may be served through the following certified partners:</p>
+
+                    <div class="perm-grid">
+                        <div class="inner-card">
+                            <h4>Google AdMob (Google LLC)</h4>
+                            <p>Serves contextual and personalized advertisements. AdMob evaluates your <strong>Google Advertising ID (GAID)</strong>, IP address, general coarse location (country/city level), and standard device diagnostic metrics (OS version, device model, screen size) to serve and measure ads.</p>
+                            <p style="margin-top: 6px; font-size: 0.73rem;">
+                                🔗 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a> &bull;
+                                <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener noreferrer">AdMob Data Processing Terms</a>
+                            </p>
+                        </div>
+
+                        <div class="inner-card">
+                            <h4>Meta Audience Network (Meta Platforms, Inc.)</h4>
+                            <p>Enables delivery of high-relevance targeted and non-targeted ads powered by Meta's advertising ecosystem. Meta Audience Network may collect device identifiers (GAID, IDFA), IP address, app package name, and interaction timestamps to serve ads and prevent fraudulent impressions.</p>
+                            <p style="margin-top: 6px; font-size: 0.73rem;">
+                                🔗 <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer">Meta Privacy Policy</a> &bull;
+                                <a href="https://developers.facebook.com/docs/audience-network/policy/" target="_blank" rel="noopener noreferrer">Audience Network Policies</a>
+                            </p>
+                        </div>
+
+                        <div class="inner-card">
+                            <h4>Unity Ads (Unity Technologies ApS)</h4>
+                            <p>Specializes in high-performance video and interactive rewarded ads. Unity Ads processes hardware device identifiers, operating system characteristics, game/utility context, and advertising attribution tokens to deliver and credit rewarded video ads.</p>
+                            <p style="margin-top: 6px; font-size: 0.73rem;">
+                                🔗 <a href="https://unity.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Unity Privacy Policy</a> &bull;
+                                <a href="https://unity.com/legal/developer-services-agreement" target="_blank" rel="noopener noreferrer">Unity Developer Terms</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="callout callout-amber">
+                        <strong>🛡️ Invariant Privacy Guarantee — Zero Gesture Context Sharing:</strong> Under NO circumstances do Google AdMob, Meta Audience Network, or Unity Ads have access to your custom gesture coordinates, touch trajectories, screen contents, in-app notes, recorded audio memos, captured photos, or personal files. These advertising SDKs operate exclusively in isolated sandbox modules according to standard Android application permissions and receive only system-level advertising signals.
+                    </div>
+
+                    <h3>Ad Mediation &amp; Real-Time Bidding</h3>
+                    <p>We may employ real-time bidding and ad mediation (e.g., via Google Mobile Ads Mediation). In this configuration, ad requests are dispatched in real time to eligible demand partners (AdMob, Meta, Unity). Each network evaluates contextual signals to return the highest-value or most relevant advertisement. No personal user data generated inside the app is shared during this bidding exchange.</p>
+
+                    <h3>How to Opt-Out of Personalized Ads Across All Networks</h3>
+                    <ul>
+                        <li><strong>System-Level Opt-Out (Android OS):</strong>
+                            Navigate to <strong>Android Settings &rarr; Google &rarr; All Services &rarr; Ads</strong> and tap <strong>"Reset Advertising ID"</strong> or tap <strong>"Delete Advertising ID"</strong> (available on Android 12+). When deleted, your device returns a zeroed-out string of zeros (<code>00000000-0000-0000-0000-000000000000</code>), effectively preventing cross-app behavioral tracking across AdMob, Meta, and Unity Ads simultaneously.</li>
+                        <li><strong>Meta Ad Preferences:</strong> If you maintain a Facebook/Meta account, you can customize or limit how Meta uses your off-platform activity to target ads at <a href="https://www.facebook.com/adpreferences" target="_blank" rel="noopener noreferrer">facebook.com/adpreferences</a>.</li>
+                        <li><strong>In-App European &amp; UK Consent Management:</strong> Users located in the European Economic Area (EEA), United Kingdom, and Switzerland can revoke or adjust consent for individual advertising vendors (Google, Meta, Unity) at any time via <strong>Settings &rarr; Privacy &rarr; Manage Ad Consent</strong>.</li>
+                        <li><strong>Ad-Free Premium Option:</strong> Users who upgrade to the Pro/Premium version via Google Play Billing enjoy a completely ad-free experience, during which all ad requests and third-party advertising SDK initializations are completely halted.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- ── SECTION 12: GOOGLE FIREBASE ── -->
+            <section id="firebase" class="policy-section section-card">
+                <h2 class="section-title"><span class="section-num">12</span>Google Firebase Services &amp; Technical Telemetry</h2>
+                <div class="section-body">
+                    <p>Dynamic Edge Gesture Control integrates <strong>Google Firebase</strong> (a cloud-backed mobile development platform operated by Google LLC) strictly for stability monitoring, crash diagnostics, performance metrics, and remote configuration flags. Firebase operates entirely separate from advertising tracking.</p>
+
+                    <h3>Firebase Modules Deployed</h3>
+                    <div class="perm-grid">
+                        <div class="inner-card">
+                            <h4>Firebase Crashlytics</h4>
+                            <p>Automatically captures anonymized crash reports including stack traces, device model, Android OS version, app version, and memory state at crash time. Crash reports do NOT include screen content, user input, personal data, or location.</p>
+                        </div>
+                        <div class="inner-card">
+                            <h4>Firebase Analytics (Google Analytics for Firebase)</h4>
+                            <p>Collects anonymized, aggregated app usage events (e.g., feature screen opens, gesture action trigger counts) to understand which features are most used. No personally identifiable information is included in analytics events. Analytics collection can be disabled via in-app Privacy Settings.</p>
+                        </div>
+                        <div class="inner-card">
+                            <h4>Firebase Remote Config</h4>
+                            <p>Fetches remote configuration flags (e.g., feature toggles, A/B test parameters, default values) from Firebase servers. No user-identifying data is transmitted during config fetches.</p>
+                        </div>
+                        <div class="inner-card">
+                            <h4>Firebase Performance Monitoring</h4>
+                            <p>Measures app startup time, screen rendering performance, and network request latency to identify and fix performance regressions. Data is aggregated and anonymized.</p>
+                        </div>
+                    </div>
+
+                    <div class="callout callout-blue">
+                        <strong>🔒 Firebase Data Protection &amp; Security:</strong> Firebase diagnostic telemetry is encrypted in transit via TLS 1.3 to Google LLC servers in the United States and globally. Data is managed pursuant to the <a href="https://firebase.google.com/terms/data-processing-terms" target="_blank" rel="noopener noreferrer">Google Cloud Privacy Notice &amp; Data Processing Terms</a>.
+                    </div>
+
+                    <h3>How to Opt-Out of Firebase Analytics</h3>
+                    <p>You can opt out of anonymous usage analytics at any time directly inside the app: navigate to <strong>Settings &rarr; Privacy &rarr; Anonymous Analytics Opt-Out</strong>. Toggling this off stops all analytical event dispatches to Google Firebase.</p>
+                </div>
+            </section>
+
+            <!-- ── SECTION 13: EU CONSENT ── -->
+            <section id="eu-consent" class="policy-section section-card purple-accent">
+                <h2 class="section-title"><span class="section-num">13</span>EU &amp; UK Consent Management (GDPR / UMP SDK)</h2>
+                <div class="section-body">
+                    <p>For users in the European Economic Area (EEA), United Kingdom, and Switzerland, Dynamic Edge Gesture Control implements a fully GDPR-compliant consent management process using the <strong>Google User Messaging Platform (UMP) SDK</strong>.</p>
+                    <h3>Consent Collection</h3>
+                    <ul>
+                        <li>On first launch, users in applicable regions are presented with a standardized IAB TCF v2.2-compliant consent form.</li>
+                        <li>Users may choose between <strong>Consent All</strong> (personalized ads and analytics), <strong>Reject All</strong> (non-personalized ads, no analytics data sharing), or manage granular vendor-level consent preferences.</li>
+                        <li>Consent status is stored locally on the device and transmitted to AdMob and Firebase to configure ad serving behavior accordingly.</li>
+                    </ul>
+                    <h3>Legal Bases Under GDPR (Regulation (EU) 2016/679)</h3>
+                    <ul>
+                        <li><strong>Legitimate Interest (Art. 6(1)(f)):</strong> Processing of minimal crash diagnostic data necessary for app stability and security.</li>
+                        <li><strong>Consent (Art. 6(1)(a)):</strong> Processing of advertising identifiers for personalized ads; aggregated analytics events. You may withdraw consent at any time via <strong>In-App Settings → Privacy → Manage Ad Consent</strong>.</li>
+                        <li><strong>Contract Performance (Art. 6(1)(b)):</strong> Processing of Google Play purchase tokens to verify and deliver premium subscription entitlements.</li>
+                    </ul>
+                    <h3>Withdrawing Consent</h3>
+                    <p>You can revisit and change your consent choices at any time by navigating to <strong>In-App Settings → Privacy → Manage Consent</strong>. Withdrawal of consent for analytics does not affect prior data already transmitted. To request deletion of prior Firebase data, see Section 22 (Data Deletion &amp; Right to Erasure).</p>
+                </div>
+            </section>
+
+            <!-- ── SECTION 14: TASKER ── -->
+            <section id="tasker" class="policy-section section-card">
+                <h2 class="section-title"><span class="section-num">14</span>Tasker, Shortcuts &amp; Third-Party Automation Integrations</h2>
+                <div class="section-body">
+                    <p>Dynamic Edge Gesture Control supports integration with Android automation platforms including <strong>Tasker</strong>, <strong>MacroDroid</strong>, <strong>KWGT</strong>, and standard Android Shortcuts. These integrations allow users to trigger EDGE gesture actions from external automation workflows and vice versa.</p>
+                    <h3>Privacy Scope of Automation Integrations</h3>
+                    <ul>
+                        <li>EDGE exposes a limited set of <strong>public Intent actions</strong> and <strong>Broadcast receivers</strong> that automation apps can use to trigger pre-configured EDGE gesture profiles.</li>
+                        <li>EDGE does not provide APIs to third-party automation apps that would allow them to read user gesture configuration data, personal files, contacts, or any other sensitive information.</li>
+                        <li>Automation tasks defined by the user using EDGE's built-in task engine are stored exclusively in local app-private storage and are never synchronized to cloud services by EDGE itself. (Note: Tasker's own cloud sync features are governed by Tasker's privacy policy.)</li>
+                        <li>EDGE does not access or parse automation task definitions from Tasker or other third-party automation apps. Data flow is one-directional: the user instructs an automation platform to send a specific Intent to EDGE.</li>
+                    </ul>
+                    <div class="callout callout-blue">
+                        <strong>Note:</strong> If you use Tasker or other automation apps in conjunction with EDGE, those applications are subject to their own privacy policies. We encourage you to review them. Dynamic Edge Gesture Control bears no responsibility for data practices of third-party automation applications.
+                    </div>
+                </div>
+            </section>
+
+            <!-- ── SECTION 15: STORAGE & BACKUP ── -->
+            <section id="storage" class="policy-section section-card">
+                <h2 class="section-title"><span class="section-num">15</span>Local Storage, Backups &amp; Data Security</h2>
+                <div class="section-body">
+                    <p>Dynamic Edge Gesture Control stores user configuration and operational data exclusively within Android's sandboxed <strong>application-private storage</strong> (<code>/data/data/com.m.payra.gesture.control.app/</code>). This directory is inaccessible to other applications without root access.</p>
+                    <h3>What is Stored Locally</h3>
+                    <ul>
+                        <li>Gesture profile configurations (swipe directions, zones, assigned actions)</li>
+                        <li>App-specific gesture profile assignments (package-to-profile mappings)</li>
+                        <li>Geo-fence zone definitions (stored as encrypted local JSON)</li>
+                        <li>In-app Notes text content (stored in encrypted SQLite database)</li>
+                        <li>Audio memo files (stored in app-private external storage)</li>
+                        <li>Camera shortcut capture thumbnails (stored in MediaStore with full user visibility)</li>
+                        <li>AdMob consent preferences and Firebase installation ID</li>
+                    </ul>
+                    <h3>Android Auto-Backup</h3>
+                    <p>Android may automatically back up application data to the user's Google Account via <strong>Android Auto Backup</strong> or <strong>Google One Backup</strong>. EDGE's backup configuration explicitly excludes sensitive files (e.g., audio memo recordings, photo captures) from automatic backup. Core configuration preferences may be backed up to enable seamless restore after device migration.</p>
+                    <p>You can disable app-level backup for EDGE specifically: <strong>Android Settings → System → Backup → App data → Dynamic Edge Gesture Control → Disable</strong>.</p>
+                    <h3>Data Encryption</h3>
+                    <p>All locally stored configuration data, geo-fence definitions, notes content, and audio memos are encrypted at rest using the Android Keystore system (AES-256-GCM where applicable). The device's locked-screen state protects against unauthorized physical access.</p>
+                </div>
+            </section>
+
+            <!-- ── SECTION 16: NETWORK SECURITY ── -->
+            <section id="network-security" class="policy-section section-card">
+                <h2 class="section-title"><span class="section-num">16</span>Network Security &amp; Data Transmission</h2>
+                <div class="section-body">
+                    <p>Dynamic Edge Gesture Control's network communication is strictly limited to the third-party integrations disclosed in this policy (Firebase, AdMob, Google Play Billing). We implement the following network security measures:</p>
+                    <ul>
+                        <li><strong>TLS 1.3 Enforcement:</strong> All outbound network connections use TLS 1.3 (minimum TLS 1.2). Plaintext HTTP connections are prohibited by the application's Network Security Configuration (<code>network_security_config.xml</code>), which declares <code>cleartextTrafficPermitted="false"</code>.</li>
+                        <li><strong>Certificate Pinning:</strong> Critical API endpoints (Firebase Remote Config) implement certificate pinning to prevent man-in-the-middle (MITM) attacks on certificate spoofing vectors.</li>
+                        <li><strong>No Custom Backend Servers:</strong> Dynamic Edge Gesture Control does not operate its own backend infrastructure. There are no EDGE company servers that receive or store user data. All third-party network communication is to Google-operated infrastructure (Firebase, AdMob, Google Play).</li>
+                        <li><strong>No Telemetry to Developer Servers:</strong> No telemetry, log data, or analytics data is sent to servers controlled by Madhusudan Payra. All diagnostic data flows exclusively to Google Firebase, which is governed by Google's data processing agreements.</li>
+                        <li><strong>DoNotTrack Compliance:</strong> Although Android does not implement a formal DNT signal, EDGE respects the semantics of the concept: users who opt out of analytics via Privacy Settings will have all third-party analytical data transmission suppressed.</li>
+                    </ul>
+                    <div class="callout callout-green">
+                        <strong>✅ Offline Operation:</strong> All gesture recognition, profile switching, note-taking, one-touch camera capture, audio memo recording, and automation task execution function completely offline without an active internet connection. Internet access is only required for ad delivery, crash reporting, analytics, and purchase verification.
+                    </div>
+                </div>
+            </section>
+
+            <!-- ── SECTION 17: TRADEMARKS & FAIR USE ── -->
+            <section id="trademarks" class="policy-section section-card">
+                <h2 class="section-title"><span class="section-num">17</span>Third-Party Trademark Disclaimer &amp; Nominative Fair Use</h2>
+                <div class="section-body">
+                    <p>Dynamic Edge Gesture Control references certain third-party trademarks, product names, service marks, logos, and brands solely for informational purposes, technical interoperability explanations, and statutory data disclosures under the legal doctrine of <strong>Nominative Fair Use</strong>.</p>
+                    <div class="callout callout-blue">
+                        <strong>📌 Nominative Fair Use Statement:</strong> All third-party trademarks, registered trademarks, product names, company names, and brand logos mentioned on this website and within the Application (including but not limited to <em>Android, Google, Google Play, Google Firebase, Google AdMob, Meta, Facebook, Unity, Tasker, WhatsApp, YouTube, Spotify, and Samsung</em>) are the property of their respective owners.
+                    </div>
+                    <p>The factual use of these names, trademarks, and brands within our application and documentation:</p>
+                    <ul>
+                        <li>Does <strong>NOT</strong> constitute, imply, or suggest any affiliation with, sponsorship of, endorsement by, or official commercial partnership with the respective trademark holders.</li>
+                        <li>Is made solely to identify compatible software, operating platforms, hardware sensors, Android system services, or integrated advertising and telemetry SDK partners as legally mandated by Google Play User Data policies, EU GDPR, and CCPA/CPRA disclosures.</li>
+                        <li>Dynamic Edge Gesture Control&trade; and EDGE are independent proprietary creations developed and owned exclusively by <strong>Madhusudan Payra</strong>.</li>
+                    </ul>
+                    <p>Software licensing restrictions, acceptable use terms, and prohibitions against reverse engineering, decompilation, and code tampering are governed exclusively under our <a href="https://bullat859.github.io/Terms-of-use/#reverse-engineering" target="_blank" rel="noopener noreferrer">Terms of Use (Section 11)</a>.</p>
+                    <p>If you are a trademark owner and believe any content or reference infringes upon your intellectual property rights, please contact us immediately at <a href="mailto:m.payra859appsupport@gmail.com">m.payra859appsupport@gmail.com</a> for prompt review and resolution.</p>
+                </div>
+            </section>
+
+            <!-- ── SECTION 18: BIOMETRIC ── -->
+            <section id="biometric" class="policy-section section-card">
+                <h2 class="section-title"><span class="section-num">18</span>Biometric Authentication &amp; Zero Credential Storage Warranty</h2>
+                <div class="section-body">
+                    <p>Dynamic Edge Gesture Control optionally allows users to protect access to the app's settings panel with biometric authentication (fingerprint or face recognition). This feature leverages exclusively Android's <strong><code>BiometricPrompt</code> API</strong> provided by the Android operating system.</p>
+                    <div class="callout callout-green">
+                        <strong>✅ Zero Biometric Data Handled by EDGE:</strong> Dynamic Edge Gesture Control does NOT access, store, transmit, or process raw biometric data (fingerprint templates, facial geometry vectors, iris patterns, or any biometric sensor output). All biometric matching is performed in a Trusted Execution Environment (TEE) or Secure Element by the Android OS itself. EDGE receives only a boolean success/failure result from the <code>BiometricPrompt</code> API.
+                    </div>
+                    <h3>Illinois BIPA Compliance Statement</h3>
+                    <p>The Illinois Biometric Information Privacy Act (740 ILCS 14/) applies to the collection and commercial use of biometric identifiers and information. Because Dynamic Edge Gesture Control does not collect, capture, purchase, receive through trade, or otherwise obtain biometric identifiers or biometric information (as defined under 740 ILCS 14/10), EDGE is not required to maintain a written retention policy under BIPA. All biometric processing is handled exclusively by the Android OS; EDGE serves only as a caller of the platform's <code>BiometricPrompt</code> API and receives no biometric data. This section is maintained for transparency for Illinois residents. See also Section 26 (BIPA Compliance).</p>
+                    <p>No passwords, PINs, biometric templates, cryptographic keys, or authentication credentials of any kind are stored by Dynamic Edge Gesture Control in plaintext or any recoverable format.</p>
+                </div>
+            </section>
+
+            <!-- ── SECTION 19: POWER MANAGEMENT ── -->
+            <section id="power" class="policy-section section-card">
+                <h2 class="section-title"><span class="section-num">19</span>Power Management, Alarms &amp; Battery Optimization</h2>
+                <div class="section-body">
+                    <p>Dynamic Edge Gesture Control requests several system-level permissions related to power management and alarm scheduling to ensure reliable gesture detection and automation execution:</p>
+                    <ul>
+                        <li><strong><code>REQUEST_IGNORE_BATTERY_OPTIMIZATIONS</code>:</strong> Requests that the Android battery optimization system exempt the EDGE foreground service from automatic process killing during Doze mode. This permission is disclosed to the user in a plain-language explanation at the time of request. It can be revoked via <strong>Settings → Battery → Battery Optimization → Dynamic Edge Gesture Control → Optimize</strong>.</li>
+                        <li><strong><code>SCHEDULE_EXACT_ALARM</code> / <code>USE_EXACT_ALARM</code>:</strong> Required for scheduling time-precise gesture automation triggers (e.g., "activate Night Mode profile at exactly 10:00 PM"). Uses Android's <code>AlarmManager.setExactAndAllowWhileIdle()</code> API. Alarm schedules are stored locally and never transmitted.</li>
+                        <li><strong><code>WAKE_LOCK</code>:</strong> Prevents CPU sleep during active gesture recognition sessions. Released immediately upon gesture completion to minimize battery impact.</li>
+                        <li><strong>Foreground Service with Notification:</strong> A persistent notification is shown whenever EDGE's gesture detection service is running, in compliance with Android's foreground service requirements (API 28+). The notification shows service status and provides a quick toggle to pause detection.</li>
+                    </ul>
+                    <p>We are committed to minimizing battery impact. EDGE's gesture detection service is designed to operate at low CPU priority and uses event-driven wake triggers rather than continuous polling where possible.</p>
+                </div>
+            </section>
+
+            <!-- ── SECTION 20: BLUETOOTH ── -->
+            <section id="bluetooth" class="policy-section section-card">
+                <h2 class="section-title"><span class="section-num">20</span>Bluetooth Connectivity &amp; Situational Awareness</h2>
+                <div class="section-body">
+                    <p>Dynamic Edge Gesture Control requests <code>BLUETOOTH_CONNECT</code> and <code>BLUETOOTH_SCAN</code> permissions (required on Android 12+ / API 31+) to enable <strong>Bluetooth-Aware Gesture Profiles</strong>.</p>
+                    <h3>How Bluetooth Permissions Are Used</h3>
+                    <ul>
+                        <li><strong>Connection State Detection:</strong> Checks whether the device is connected to a specific Bluetooth device (identified by device name, not address) to trigger profile switching. Example: switching to "Car Mode" gestures when connected to a named Bluetooth car kit.</li>
+                        <li><strong>Bluetooth Device Name Scanning:</strong> Briefly scans for nearby Bluetooth devices to compare against user-defined device name rules. Scanning occurs only when the Bluetooth situational feature is enabled and stops once the rule evaluation is complete.</li>
+                    </ul>
+                    <div class="callout callout-green">
+                        <strong>✅ Bluetooth Privacy Guarantee:</strong> No Bluetooth MAC addresses, pairing keys, device UUIDs, audio data, or communication data from connected Bluetooth devices are captured, logged, or transmitted by EDGE. Bluetooth device names (not addresses) used in user-defined rules are stored locally in encrypted configuration files only.
+                    </div>
+                    <p>Bluetooth permission usage is in full compliance with Google Play's Bluetooth policy requirements. Revoking Bluetooth permissions disables situational Bluetooth profile switching but does not affect any other EDGE functionality.</p>
+                </div>
+            </section>
+
+            <!-- ── SECTION 21: NOTIFICATIONS ── -->
+            <section id="notifications" class="policy-section section-card">
+                <h2 class="section-title"><span class="section-num">21</span>Notifications &amp; Alert Policies</h2>
+                <div class="section-body">
+                    <p>Dynamic Edge Gesture Control uses Android's notification system for the following purposes:</p>
+                    <ul>
+                        <li><strong>Foreground Service Notification (Mandatory):</strong> A persistent notification displayed while the gesture detection service is active, required by Android policy for apps running foreground services that access camera, microphone, or location. This notification cannot be disabled while the service is running but can be minimized to silent/low-priority channel on most devices.</li>
+                        <li><strong>Gesture Action Confirmation Alerts:</strong> Optional brief toast notifications or notification alerts confirming specific gesture action executions (e.g., "Screenshot taken"). Can be disabled in Settings → Notifications.</li>
+                        <li><strong>Update &amp; Promotional Notifications:</strong> Occasionally, we may send in-app update announcements. These are delivered via Firebase Remote Config (not push notifications) and displayed as in-app banners rather than system notification channel notifications.</li>
+                    </ul>
+                    <div class="callout callout-blue">
+                        <strong>Android 13+ (API 33+) Notification Permission:</strong> On Android 13 and above, EDGE requests the <code>POST_NOTIFICATIONS</code> runtime permission at first launch before displaying any notifications. You may deny this permission; only the mandatory foreground service notification (which is displayed as a system foreground service notification regardless) is affected by this choice.
+                    </div>
+                    <p>You can manage EDGE's notification channels at any time via <strong>Android Settings → Apps → Dynamic Edge Gesture Control → Notifications</strong>.</p>
+                </div>
+            </section>
+
+            <!-- ── SECTION 22: DATA DELETION ── -->
+            <section id="data-deletion" class="policy-section section-card green-accent">
+                <h2 class="section-title"><span class="section-num">22</span>Data Deletion, Right to Erasure &amp; User Data Requests</h2>
+                <div class="section-body">
+                    <p>In compliance with Google Play's mandatory User Data Deletion requirements (effective December 2023), the GDPR Right to Erasure (Article 17), and the CCPA Right to Delete (Cal. Civ. Code § 1798.105), we provide the following data deletion mechanisms:</p>
+
+                    <h3>Immediate On-Device Deletion</h3>
+                    <p>You can delete all locally stored EDGE data instantly:</p>
+                    <ul>
+                        <li><strong>In-App Reset:</strong> Navigate to <strong>Settings → Advanced → Reset All Settings</strong> to clear all gesture profiles, automation rules, geo-fence zones, notes, and configuration preferences.</li>
+                        <li><strong>Uninstall:</strong> Uninstalling Dynamic Edge Gesture Control permanently removes all app-private storage data from your device, including configuration, notes, and audio memos, in accordance with Android's application sandbox rules.</li>
+                        <li><strong>Android Clear Data:</strong> Via <strong>Settings → Apps → Dynamic Edge Gesture Control → Storage → Clear Data</strong>.</li>
+                    </ul>
+
+                    <h3>Third-Party Analytics Data Deletion</h3>
+                    <p>To request deletion of diagnostic/analytics data stored by Firebase (anonymized crash logs, analytics events):</p>
+                    <ul>
+                        <li>Email us at <a href="mailto:m.payra859appsupport@gmail.com">m.payra859appsupport@gmail.com</a> with the subject line "<strong>Data Deletion Request — EDGE Analytics</strong>" and include your Firebase Installation ID (found in <strong>Settings → About → App Info → Installation ID</strong>).</li>
+                        <li>We will submit a deletion request to Google Firebase on your behalf within 30 days of receiving your request. Google Firebase retains the right to maintain aggregated, anonymized data that cannot be linked back to individuals.</li>
+                    </ul>
+                    <p>Because EDGE does not maintain its own user database or account system, there is no user account to delete — only optional Firebase diagnostic data and AdMob advertising identifier interactions.</p>
+
+                    <div class="callout callout-green">
+                        <strong>✅ Response Timeframe:</strong> We acknowledge all data deletion requests within 72 hours and complete all actionable requests within 30 calendar days, in compliance with GDPR Article 17 and CCPA requirements.
+                    </div>
+                </div>
+            </section>
+
+            <!-- ── SECTION 23: CHILDREN (COPPA) ── -->
+            <section id="children" class="policy-section section-card red-accent">
+                <h2 class="section-title"><span class="section-num">23</span>Children's Privacy — COPPA, GDPR Article 8 &amp; CCPA</h2>
+                <div class="section-body">
+                    <div class="callout callout-red">
+                        <strong>⛔ Age Restriction — This App Is Not Intended for Children Under 13.</strong>
+                    </div>
+                    <p>Dynamic Edge Gesture Control is designed exclusively for users who are at least <strong>13 years of age</strong> (or the applicable age of digital consent in your jurisdiction — 16 in certain EU member states under GDPR Article 8, 13 in the United States under COPPA). The application is NOT directed at children under these age thresholds.</p>
+
+                    <h3>COPPA Compliance (USA — Children's Online Privacy Protection Act, 15 U.S.C. § 6501 et seq.)</h3>
+                    <p>We do not knowingly collect personal information from children under 13 years of age in the United States. Dynamic Edge Gesture Control does not implement any age-verification mechanism because it does not collect any personal information from users (accounts, emails, profile data). The camera, microphone, and location features are general-purpose gesture trigger mechanisms, not features designed to appeal specifically to or be directed at children as defined under COPPA Section 312.2.</p>
+                    <p>If we discover that we have inadvertently received personal data from a child under 13 via Firebase crash reports (e.g., a device model identifier linked to a minor), we will promptly delete such data. Parents or guardians who believe their child has inadvertently used this application may contact us at <a href="mailto:m.payra859appsupport@gmail.com">m.payra859appsupport@gmail.com</a> for data review and deletion.</p>
+
+                    <h3>GDPR Article 8 — Children in the European Union</h3>
+                    <p>In EU member states that set the age of consent for information society services at 16 years (including Germany, the Netherlands, and others), we recommend that parents/guardians supervise the installation and configuration of EDGE on devices used by minors aged 13–15. Our Google UMP consent dialog is calibrated to treat users below the applicable age threshold as non-consenting for purposes of personalized advertising and to serve only non-personalized ads.</p>
+
+                    <h3>CCPA — California Minors (Cal. Bus. &amp; Prof. Code § 22580–22582)</h3>
+                    <p>Under the California Online Privacy Protection Act (CalOPPA) and related statutes, operators of websites or online services directed to minors must post specific privacy disclosures. Because EDGE is directed at users 13 and older and does not knowingly collect personal information from minors, EDGE complies with these requirements by default. California minors may request removal of content they have publicly posted; however, since EDGE does not have any user-generated public content platform, this provision does not apply to EDGE's feature set.</p>
+                </div>
+            </section>
+
+            <!-- ── SECTION 24: GDPR & CCPA ── -->
+            <section id="gdpr-ccpa" class="policy-section section-card purple-accent">
+                <h2 class="section-title"><span class="section-num">24</span>GDPR &amp; CCPA/CPRA — Your International Privacy Rights</h2>
+                <div class="section-body">
+                    <h3>Rights Under EU/UK GDPR (Regulation (EU) 2016/679)</h3>
+                    <p>If you are a resident of the European Economic Area (EEA) or United Kingdom, you have the following rights regarding your personal data:</p>
+                    <ul>
+                        <li><strong>Right of Access (Art. 15):</strong> Request a copy of the personal data we hold about you (e.g., Firebase Installation ID, anonymized crash log identifiers).</li>
+                        <li><strong>Right to Rectification (Art. 16):</strong> Request correction of inaccurate personal data.</li>
+                        <li><strong>Right to Erasure / "Right to be Forgotten" (Art. 17):</strong> Request deletion of your personal data. See Section 22 for the deletion process.</li>
+                        <li><strong>Right to Restriction of Processing (Art. 18):</strong> Request that we restrict processing of your data in certain circumstances.</li>
+                        <li><strong>Right to Data Portability (Art. 20):</strong> Request your personal data in a machine-readable format. (Note: because EDGE stores configuration data locally on your device, most data is inherently portable and accessible directly to you.)</li>
+                        <li><strong>Right to Object (Art. 21):</strong> Object to processing based on legitimate interests (e.g., crash diagnostics).</li>
+                        <li><strong>Rights Related to Automated Decision-Making (Art. 22):</strong> EDGE does not engage in automated profiling or decision-making that produces legal or similarly significant effects for users.</li>
+                        <li><strong>Right to Lodge a Complaint:</strong> You have the right to lodge a complaint with your local supervisory authority. In the EU, find your authority at <a href="https://edpb.europa.eu/about-edpb/about-edpb/members_en" target="_blank" rel="noopener noreferrer">edpb.europa.eu</a>. In the UK: <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer">Information Commissioner's Office (ICO)</a>.</li>
+                    </ul>
+
+                    <h3>Rights Under CCPA/CPRA (California Consumer Privacy Act &amp; California Privacy Rights Act)</h3>
+                    <p>If you are a California resident, the CCPA (as amended by CPRA, effective January 1, 2023) grants you the following rights:</p>
+                    <ul>
+                        <li><strong>Right to Know (§ 1798.100):</strong> Know what personal information we collect, use, disclose, and sell.</li>
+                        <li><strong>Right to Delete (§ 1798.105):</strong> Request deletion of your personal information.</li>
+                        <li><strong>Right to Opt-Out of Sale/Sharing (§ 1798.120):</strong> <strong>We do not sell personal information</strong> as defined under CCPA. We do share the Google Advertising ID with AdMob for advertising purposes (with consent), which may constitute "sharing" under CPRA. You may opt out by resetting or deleting your Google Advertising ID and opting out of Firebase Analytics via in-app settings.</li>
+                        <li><strong>Right to Non-Discrimination (§ 1798.125):</strong> We will not discriminate against you for exercising your CCPA rights. Premium features are not conditioned on consenting to data collection.</li>
+                        <li><strong>Right to Correct Inaccurate Information (§ 1798.106, added by CPRA):</strong> Request correction of inaccurate personal information.</li>
+                        <li><strong>Right to Limit Use of Sensitive Personal Information (§ 1798.121, added by CPRA):</strong> EDGE does not sell or use sensitive personal information for advertising. Location data, biometric data, and health data are used solely for app functionality as disclosed herein.</li>
+                    </ul>
+                    <p>To exercise any of these rights, contact us at: <a href="mailto:m.payra859appsupport@gmail.com">m.payra859appsupport@gmail.com</a> with the subject line "Privacy Rights Request — [Your Right Name]". We will respond within 45 days (extendable by a further 45 days with notice).</p>
+                </div>
+            </section>
+
+            <!-- ── SECTION 25: US STATE LAWS ── -->
+            <section id="us-state" class="policy-section section-card">
+                <h2 class="section-title"><span class="section-num">25</span>U.S. State Privacy Laws — Virginia, Colorado, Connecticut &amp; Others</h2>
+                <div class="section-body">
+                    <p>In addition to the California CCPA/CPRA, Dynamic Edge Gesture Control acknowledges the following state privacy laws now in effect in the United States:</p>
+                    <div class="perm-grid">
+                        <div class="inner-card">
+                            <h4>Virginia Consumer Data Protection Act (VCDPA) — Effective Jan 1, 2023</h4>
+                            <p>Virginia residents have rights to access, correct, delete, and obtain a copy of personal data, and to opt out of targeted advertising, sale of personal data, and profiling. Our disclosures in Section 24 cover these rights equivalently. Contact us to exercise VCDPA rights.</p>
+                        </div>
+                        <div class="inner-card">
+                            <h4>Colorado Privacy Act (CPA) — Effective July 1, 2023</h4>
+                            <p>Colorado residents have rights to opt out of targeted advertising and the sale of personal data. Our AdMob opt-out mechanism (reset Google Advertising ID) serves as the technical implementation for this opt-out right.</p>
+                        </div>
+                        <div class="inner-card">
+                            <h4>Connecticut Data Privacy Act (CTDPA) — Effective July 1, 2023</h4>
+                            <p>Connecticut residents have substantially equivalent rights to Virginia and Colorado residents under the CTDPA. Our data deletion and opt-out mechanisms apply equally.</p>
+                        </div>
+                        <div class="inner-card">
+                            <h4>Texas Data Privacy and Security Act (TDPSA) — Effective July 1, 2024</h4>
+                            <p>Texas residents are entitled to know, correct, delete, and obtain their personal data, and to opt out of targeted advertising. The same mechanisms described above apply.</p>
+                        </div>
+                        <div class="inner-card">
+                            <h4>Oregon Consumer Privacy Act (OCPA) — Effective July 1, 2024</h4>
+                            <p>Oregon residents have comparable rights. Contact us at the support email with "OCPA Privacy Request" in the subject line.</p>
+                        </div>
+                        <div class="inner-card">
+                            <h4>Indiana Consumer Data Protection Act — Effective Jan 1, 2026</h4>
+                            <p>We are preparing for Indiana's forthcoming law. Rights under the Indiana CDPA will be serviced via our existing data request mechanism.</p>
+                        </div>
+                    </div>
+                    <p>Users in any U.S. state may exercise their applicable privacy rights by contacting <a href="mailto:m.payra859appsupport@gmail.com">m.payra859appsupport@gmail.com</a>. We will assess the applicable law based on your state of residency as disclosed in your request.</p>
+                </div>
+            </section>
+
+            <!-- ── SECTION 26: BIPA ── -->
+            <section id="bipa" class="policy-section section-card">
+                <h2 class="section-title"><span class="section-num">26</span>Illinois Biometric Information Privacy Act (BIPA)</h2>
+                <div class="section-body">
+                    <p>Illinois residents are protected by the Biometric Information Privacy Act (740 ILCS 14/), which governs the collection, storage, use, and destruction of biometric identifiers and biometric information.</p>
+                    <div class="callout callout-green">
+                        <strong>✅ BIPA Non-Applicability Statement:</strong> Dynamic Edge Gesture Control does NOT collect, capture, receive, purchase, or otherwise obtain any biometric identifier or biometric information (as defined under 740 ILCS 14/10) from any Illinois resident. The biometric authentication feature described in Section 18 invokes Android's <code>BiometricPrompt</code> API, which processes all biometric matching within the device's Trusted Execution Environment (TEE). EDGE receives only a pass/fail boolean result and never receives, stores, or transmits any biometric template, fingerprint scan data, facial geometry, iris scan, voiceprint, retina scan, hand scan, or any other biometric identifier.
+                    </div>
+                    <p>Therefore, EDGE is not subject to BIPA's requirements to: (1) develop a written policy for biometric data retention; (2) obtain written consent before collecting biometric data; (3) provide a retention schedule; or (4) avoid selling or profiting from biometric data. We maintain this disclosure for complete transparency with Illinois residents.</p>
+                    <p>If you have questions about BIPA applicability, contact: <a href="mailto:m.payra859appsupport@gmail.com">m.payra859appsupport@gmail.com</a></p>
+                </div>
+            </section>
+
+            <!-- ── SECTION 27: SHINE THE LIGHT ── -->
+            <section id="shine-light" class="policy-section section-card">
+                <h2 class="section-title"><span class="section-num">27</span>California Shine the Light Act (Cal. Civ. Code § 1798.83)</h2>
+                <div class="section-body">
+                    <p>California's "Shine the Light" law (California Civil Code Section 1798.83) gives California residents the right to receive information about whether businesses disclose personal information to third parties for direct marketing purposes, and to request a list of the categories of personal information shared and the names of those third parties.</p>
+                    <div class="callout callout-blue">
+                        <strong>Our Disclosure Under the Shine the Light Act:</strong> Dynamic Edge Gesture Control does NOT disclose personal information to third parties for their direct marketing purposes. We do not sell or rent personal information. We share the Google Advertising ID with Google AdMob solely for the purpose of delivering in-app advertisements (first-party ad relationship), which does not constitute "sharing" personal information for "direct marketing" by a third party's independent campaign under the meaning of § 1798.83. Therefore, California residents do not have a right to request disclosure of third-party direct marketing recipients from us, as we have no such recipients.
+                    </div>
+                    <p>California residents with questions about this disclosure may contact us at <a href="mailto:m.payra859appsupport@gmail.com">m.payra859appsupport@gmail.com</a> with the subject line "Shine the Light Request".</p>
+                </div>
+            </section>
+
+            <!-- ── SECTION 28: DPO ── -->
+            <section id="dpo" class="policy-section section-card purple-accent">
+                <h2 class="section-title"><span class="section-num">28</span>Data Protection Officer (DPO) &amp; GDPR EU Representative</h2>
+                <div class="section-body">
+                    <p>As an independent developer operating as a sole proprietor without employees, Madhusudan Payra is not legally required to appoint a formal <strong>Data Protection Officer (DPO)</strong> under GDPR Article 37 (which applies to organizations that carry out systematic, large-scale processing of sensitive personal data). EDGE does not carry out such large-scale systematic processing.</p>
+
+                    <h3>Privacy Point of Contact</h3>
+                    <p>All data protection inquiries, data subject access requests (DSARs), and GDPR/CCPA/BIPA compliance questions should be directed to:</p>
+                    <div class="inner-card">
+                        <h4>Privacy Contact — Madhusudan Payra</h4>
+                        <p>Email: <a href="mailto:m.payra859appsupport@gmail.com">m.payra859appsupport@gmail.com</a><br>
+                        Subject line prefix: <strong>"PRIVACY REQUEST:"</strong><br>
+                        Response time: Within 72 hours (acknowledgment); 30 days (full response)</p>
+                    </div>
+
+                    <h3>GDPR EU Representative (Art. 27)</h3>
+                    <p>Dynamic Edge Gesture Control's data controller (Madhusudan Payra) is based outside the EU/EEA. As a sole-developer application with minimal data processing and no systematic monitoring of EU data subjects, we invoke the exemption under GDPR Article 27 for controllers that only occasionally process data not on a large scale, do not process special category data, and whose processing is unlikely to result in a risk to the rights and freedoms of natural persons.</p>
+                    <p>If you are an EU/EEA resident and wish to exercise your GDPR rights, please contact us directly at the email above. Unresolved concerns may be escalated to your country's national data protection authority (DPA), listed at <a href="https://edpb.europa.eu/about-edpb/about-edpb/members_en" target="_blank" rel="noopener noreferrer">edpb.europa.eu</a>.</p>
+                </div>
+            </section>
+
+            <!-- ── SECTION 29: POLICY WEBPAGE ── -->
+            <section id="policy-webpage" class="policy-section section-card">
+                <h2 class="section-title"><span class="section-num">29</span>Accessibility &amp; Privacy of This Policy Webpage</h2>
+                <div class="section-body">
+                    <p>This privacy policy is hosted as a static HTML webpage at <strong>bullat859.github.io/privacy-policy/</strong> via GitHub Pages, operated by GitHub, Inc. (a subsidiary of Microsoft Corporation). By visiting this webpage, you are subject to GitHub's privacy policy at <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">docs.github.com</a>, which governs GitHub's own data collection (including server logs, IP addresses, and browser metadata for static page delivery).</p>
+                    <h3>No Tracking on This Webpage</h3>
+                    <ul>
+                        <li>This webpage does NOT set any cookies (first-party or third-party).</li>
+                        <li>This webpage does NOT use Google Analytics, Facebook Pixel, or any other analytics tracking scripts.</li>
+                        <li>This webpage does NOT serve advertisements.</li>
+                        <li>This webpage does NOT use tracking pixels, web beacons, session recording tools, or fingerprinting scripts.</li>
+                        <li>All fonts are loaded from <strong>Google Fonts</strong> (fonts.googleapis.com), which may log your IP address and browser UA in accordance with Google's <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>. If you prefer, you may block fonts.googleapis.com via your browser or a content blocker; the page remains fully functional with system fallback fonts.</li>
+                    </ul>
+                    <h3>Accessibility of This Webpage</h3>
+                    <p>This privacy policy webpage is designed to meet <strong>WCAG 2.1 Level AA</strong> accessibility guidelines: it uses semantic HTML5, ARIA labels where appropriate, sufficient color contrast ratios, scalable text, and keyboard navigability. If you encounter accessibility barriers, please contact <a href="mailto:m.payra859appsupport@gmail.com">m.payra859appsupport@gmail.com</a>.</p>
+                </div>
+            </section>
+
+            <!-- ── SECTION 30: POLICY CHANGES ── -->
+            <section id="changes" class="policy-section section-card">
+                <h2 class="section-title"><span class="section-num">30</span>Policy Changes, Version History &amp; Notifications</h2>
+                <div class="section-body">
+                    <p>We may update this Privacy Policy periodically to reflect changes in our app's functionality, applicable law, or third-party service updates. We are committed to transparent policy governance:</p>
+                    <ul>
+                        <li><strong>Material Changes:</strong> For material changes (e.g., introduction of new data collection categories, new third-party integrations, or changes to how we use sensitive permissions), we will notify users via an in-app notification and/or a highlighted update notice on this webpage for at least 30 days before the changes take effect.</li>
+                        <li><strong>Non-Material Changes:</strong> Minor clarifications, typographical fixes, or structural reorganization of this policy that do not affect data practices will be updated without specific advance notice, but the "Last Updated" date will be revised.</li>
+                        <li><strong>Version Archive:</strong> Prior versions of this Privacy Policy are available upon request by emailing <a href="mailto:m.payra859appsupport@gmail.com">m.payra859appsupport@gmail.com</a> with the subject "Privacy Policy Version History Request".</li>
+                        <li><strong>Continued Use:</strong> Continued use of Dynamic Edge Gesture Control following a policy update constitutes acceptance of the updated policy. If you do not agree with the updated policy, please uninstall the application.</li>
+                    </ul>
+                    <div class="callout callout-blue">
+                        <strong>Current Version:</strong> This Privacy Policy was last materially reviewed and updated in <strong>October 2026</strong> to incorporate: (a) expanded U.S. state privacy law coverage (VCDPA, CPA, CTDPA, TDPSA); (b) detailed BIPA and Shine the Light disclosures; (c) data deletion mechanism documentation per Google Play's requirements; (d) expanded network security and offline operation disclosures; (e) accessibility statement for this webpage.
+                    </div>
+                </div>
+            </section>
+
+            <!-- ── SECTION 31: LIABILITY ── -->
+            <section id="liability" class="policy-section section-card amber-accent">
+                <h2 class="section-title"><span class="section-num">31</span>Legal Liability Disclaimer</h2>
+                <div class="section-body">
+                    <div class="callout callout-amber">
+                        <strong>AS IS / AS AVAILABLE DISCLAIMER:</strong> Dynamic Edge Gesture Control is provided on an "AS IS" and "AS AVAILABLE" basis without warranties of any kind, express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, non-infringement, and error-free operation.
+                    </div>
+                    <p>To the maximum extent permitted by applicable law, Madhusudan Payra, the developer of Dynamic Edge Gesture Control, shall not be liable for:</p>
+                    <ul>
+                        <li>Any direct, indirect, incidental, special, exemplary, punitive, or consequential damages arising from your use or inability to use the application.</li>
+                        <li>Any damage or loss caused by third-party hardware failures, OS-level interruptions, or unexpected device behavior during gesture automation execution.</li>
+                        <li>Any privacy or security incidents arising from third-party services (Firebase, AdMob, Google Play) which are governed by their respective agreements with Google LLC.</li>
+                        <li>Any data loss arising from Android OS updates, device resets, or storage failures that delete locally stored gesture configurations, notes, or audio memos.</li>
+                        <li>Any harm resulting from unauthorized third-party access to your device facilitated by rooting, jailbreaking, or other OS modification that circumvents Android's security model.</li>
+                        <li>Any outcome of actions performed by the application's gesture automation features (e.g., accidental calls placed, accidental screenshots taken) when triggered by unintended gesture patterns.</li>
+                    </ul>
+                    <p>Some jurisdictions do not allow the exclusion of implied warranties or limitation of liability for consequential damages, so the above limitations may not apply to you in full. In such jurisdictions, our liability is limited to the maximum extent permitted by law.</p>
+                </div>
+            </section>
+
+            <!-- ── SECTION 32: INDEMNIFICATION ── -->
+            <section id="indemnification" class="policy-section section-card">
+                <h2 class="section-title"><span class="section-num">32</span>User Indemnification &amp; Sole Remedy</h2>
+                <div class="section-body">
+                    <p>By using Dynamic Edge Gesture Control, you agree to indemnify, defend, and hold harmless Madhusudan Payra, his successors, assigns, and agents from and against any and all claims, damages, losses, liabilities, costs, and expenses (including reasonable legal fees) arising from:</p>
+                    <ul>
+                        <li>Your violation of this Privacy Policy or the associated Terms of Use;</li>
+                        <li>Your violation of any applicable local, state, national, or international law or regulation through your use of the application;</li>
+                        <li>Your infringement of any intellectual property, privacy, or other rights of any third party through your use of the application's features;</li>
+                        <li>Actions performed by automated gesture triggers that you configured and that result in unintended consequences on your device.</li>
+                    </ul>
+                    <p><strong>Sole Remedy:</strong> Your sole and exclusive remedy for dissatisfaction with this application, including any concerns about data practices, is to discontinue use and uninstall the application. As EDGE does not operate account infrastructure or payment processing independently, refund requests must be directed to Google Play as described in Section 10.</p>
+                </div>
+            </section>
+
+            <!-- ── SECTION 33: DATA SECURITY RETENTION ── -->
+            <section id="security" class="policy-section section-card green-accent">
+                <h2 class="section-title"><span class="section-num">33</span>Data Security Architecture, Retention &amp; Incident Response</h2>
+                <div class="section-body">
+                    <h3>Security Architecture</h3>
+                    <ul>
+                        <li><strong>Android Keystore Integration:</strong> Sensitive locally stored data (geo-fence definitions, notes, configuration secrets) is encrypted using keys managed by the Android Keystore System, which stores cryptographic keys in hardware-backed secure storage (TEE/StrongBox) where available.</li>
+                        <li><strong>Application Sandbox Isolation:</strong> App data is stored in an isolated sandbox (<code>/data/data/com.m.payra.gesture.control.app/</code>) inaccessible to other apps without root compromise.</li>
+                        <li><strong>ProGuard / R8 Code Obfuscation:</strong> The application is compiled with R8 code shrinking and obfuscation to reduce attack surface from decompilation attempts.</li>
+                        <li><strong>No Hardcoded Credentials:</strong> No API keys, database credentials, or server certificates are hardcoded in the application binary. All secrets are managed via secure build-time injection or runtime secure storage mechanisms.</li>
+                        <li><strong>Secure Network Transport:</strong> All internet communications use TLS 1.3 as described in Section 16.</li>
+                    </ul>
+
+                    <h3>Data Retention Periods</h3>
+                    <ul>
+                        <li><strong>Local Configuration Data:</strong> Retained indefinitely until the user manually deletes it, resets the app, or uninstalls the application.</li>
+                        <li><strong>Firebase Crash Reports:</strong> Retained by Google Firebase for up to 90 days per Firebase's default retention settings. Anonymized aggregated metrics may be retained longer in non-identifiable form.</li>
+                        <li><strong>Firebase Analytics Events:</strong> Retained for up to 14 months per Google's default analytics retention policy (configurable by the developer down to 2 months in the Firebase Console).</li>
+                        <li><strong>AdMob Advertising Identifier:</strong> The Google Advertising ID is not permanently stored by EDGE. It is passed to AdMob at ad request time and governed by AdMob's retention policies.</li>
+                    </ul>
+
+                    <h3>Security Incident Response</h3>
+                    <p>In the event of a confirmed security breach affecting EDGE user data (including any breach of Firebase data storage accessed by unauthorized parties), we commit to:</p>
+                    <ol>
+                        <li>Notifying affected users via an in-app notification and update announcement within 72 hours of confirmed breach (in compliance with GDPR Article 33/34 notification requirements).</li>
+                        <li>Reporting the breach to relevant supervisory authorities where required by applicable law.</li>
+                        <li>Publishing a detailed post-incident report on this webpage within 30 days of breach confirmation.</li>
+                    </ol>
+                    <p>To report a suspected security vulnerability, please contact: <a href="mailto:m.payra859appsupport@gmail.com">m.payra859appsupport@gmail.com</a> with the subject "Security Vulnerability Report". We appreciate and respond to responsible disclosure reports.</p>
+                </div>
+            </section>
+
+            <!-- ── SECTION 34: CONTACT ── -->
             <section id="contact" class="policy-section section-card" style="border: 2px solid rgba(59,130,246,0.35);">
                 <h2 class="section-title"><span class="section-num">34</span>Contact &amp; Legal Inquiries</h2>
                 <div class="section-body">
@@ -944,7 +1651,7 @@
         <!-- FOOTER -->
         <footer>
             <div class="footer-last-updated">
-                🕐 Last Updated: October 2026
+                🕐 Last Updated: November 2026
             </div>
 
             <div class="footer-links">
